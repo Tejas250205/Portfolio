@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejas Bhurse — Portfolio</title>
+  <meta name="description" content="Portfolio of Tejas Bhurse — Chemical Engineering researcher specializing in process simulation, optimization, and sustainable engineering solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== CSS Custom Properties ===== */
+    :root {
+      --bg-page: #f4f7f6;
+      --bg-card: rgba(255,255,255,0.72);
+      --bg-card-hover: rgba(255,255,255,0.92);
+      --glass-border: rgba(0,0,0,0.06);
+      --glass-border-hover: rgba(13,147,115,0.25);
+      --text-heading: #1a2332;
+      --text-body: #3d4f5f;
+      --text-muted: #7a8a96;
+      --text-accent: #0d9373;
+      --teal-500: #0d9373;
+      --teal-400: #14b8a6;
+      --teal-300: #5eead4;
+      --teal-100: #ccfbf1;
+      --emerald-500: #10b981;
+      --sky-500: #0ea5e9;
+      --sky-400: #38bdf8;
+      --amber-500: #f59e0b;
+      --amber-400: #fbbf24;
+      --indigo-500: #6366f1;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-pill: 100px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 40px rgba(13,147,115,0.08);
+      --ease-smooth: cubic-bezier(0.25,0.46,0.45,0.94);
+      --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    /* ===== Scrollbar ===== */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(13,147,115,0.25);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(13,147,115,0.4);
+    }
+
+    /* ===== Ambient Background ===== */
+    .hero-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(13,147,115,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(14,165,233,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 25s ease-in-out infinite reverse;
+    }
+
+    .grid-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.015) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* ===== Navigation ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(244,247,246,0.85);
+      border-bottom: 1px solid var(--glass-border);
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow-md);
+      background: rgba(244,247,246,0.95);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      background: linear-gradient(135deg, var(--teal-500), var(--sky-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      transition: all 0.3s var(--ease-smooth);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--teal-500);
+      background: rgba(13,147,115,0.08);
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-heading);
+      padding: 4px;
+    }
+
+    /* ===== Section Common ===== */
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      background: rgba(13,147,115,0.08);
+      border: 1px solid rgba(13,147,115,0.15);
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--teal-500);
+      margin-bottom: 20px;
+    }
+
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-500);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      background: linear-gradient(135deg, var(--text-heading), var(--teal-500), var(--sky-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== Landing ===== */
+    .landing-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 0;
+    }
+
+    .landing-content {
+      text-align: center;
+      max-width: 800px;
+      padding: 40px;
+    }
+
+    .landing-photo-wrapper {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 32px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--teal-500), var(--sky-500));
+      box-shadow: 0 10px 50px rgba(13,147,115,0.15);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .landing-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--bg-page);
+    }
+
+    .landing-name {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      min-height: 1.2em;
+      margin-bottom: 4px;
+    }
+
+    .typewriter {
+      background: linear-gradient(135deg, var(--text-heading), var(--teal-500), var(--sky-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cursor {
+      display: inline-block;
+      animation: blink 1s step-end infinite;
+      -webkit-text-fill-color: var(--teal-500);
+    }
+
+    .landing-designation {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin: 8px 0 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .landing-intro {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 36px;
+    }
+
+    .landing-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s var(--ease-smooth);
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal-500), var(--teal-400));
+      color: white;
+      box-shadow: 0 4px 20px rgba(13,147,115,0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(13,147,115,0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid var(--teal-400);
+      color: var(--teal-500);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(13,147,115,0.06);
+      transform: translateY(-2px);
+    }
+
+    .landing-socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      transition: all 0.3s var(--ease-smooth);
+      cursor: pointer;
+    }
+
+    .social-btn:hover {
+      background: rgba(13,147,115,0.1);
+      color: var(--teal-500);
+      border-color: var(--teal-300);
+      transform: translateY(-2px);
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* ===== About ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-photo-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-photo {
+      width: 100%;
+      display: block;
+    }
+
+    .about-summary {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: var(--text-body);
+      margin-bottom: 36px;
+    }
+
+    .mission-vision-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .flip-card {
+      perspective: 1000px;
+      height: 200px;
+    }
+
+    .flip-card-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.7s var(--ease-smooth);
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .flip-card-front {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-left: 4px solid var(--teal-400);
+    }
+
+    .flip-card-front h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-heading);
+      margin-top: 10px;
+    }
+
+    .flip-card-front .flip-hint {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .flip-card-front .flip-icon {
+      font-size: 2rem;
+    }
+
+    .flip-card-back {
+      background: linear-gradient(135deg, var(--teal-500), var(--teal-400));
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-back p {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .about-nav-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .about-nav-pill {
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      background: rgba(13,147,115,0.06);
+      border: 1px solid rgba(13,147,115,0.12);
+      color: var(--teal-500);
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .about-nav-pill:hover {
+      background: rgba(13,147,115,0.12);
+      transform: translateY(-1px);
+    }
+
+    /* ===== Experience / Timeline ===== */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal-300), var(--sky-400));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -31px;
+      top: 24px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--teal-500);
+      border: 3px solid var(--bg-page);
+      box-shadow: 0 0 0 3px rgba(13,147,115,0.2);
+      z-index: 2;
+    }
+
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--glass-border-hover);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .timeline-role {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-heading);
+    }
+
+    .timeline-company {
+      font-size: 0.85rem;
+      color: var(--text-accent);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .timeline-location {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .timeline-duration {
+      padding: 6px 14px;
+      background: var(--teal-100);
+      color: var(--teal-500);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .timeline-bullets li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      font-size: 0.84rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    .timeline-bullets li::before {
+      content: '\25B8';
+      position: absolute;
+      left: 0;
+      color: var(--teal-400);
+    }
+
+    .timeline-achievements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .timeline-ach-tag {
+      padding: 5px 12px;
+      background: rgba(13,147,115,0.06);
+      border: 1px solid rgba(13,147,115,0.12);
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--teal-500);
+    }
+
+    /* ===== Education ===== */
+    .edu-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      text-align: center;
+      transition: all 0.4s var(--ease-smooth);
+    }
+
+    .edu-card:hover {
+      box-shadow: inset 0 0 0 2px var(--teal-400), var(--shadow-lg);
+    }
+
+    .edu-degree {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      background: linear-gradient(135deg, var(--text-heading), var(--teal-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+
+    .edu-minor {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .edu-institution {
+      font-size: 0.9rem;
+      color: var(--text-accent);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .edu-institution .inst-icon {
+      margin-right: 6px;
+    }
+
+    .edu-duration {
+      display: inline-block;
+      padding: 5px 14px;
+      background: var(--teal-100);
+      color: var(--teal-500);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      margin-bottom: 28px;
+    }
+
+    .edu-cgpa-highlight {
+      margin-bottom: 28px;
+    }
+
+    .cgpa-big {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .cgpa-number {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, var(--teal-500), var(--sky-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cgpa-of {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .cgpa-label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .scholarship-badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 16px;
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.2);
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--amber-500);
+    }
+
+    .semester-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .sem-card {
+      background: rgba(13,147,115,0.04);
+      border: 1px solid rgba(13,147,115,0.1);
+      border-radius: var(--radius-sm);
+      padding: 14px 22px;
+      text-align: center;
+    }
+
+    .sem-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .sem-gpa {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--text-heading);
+    }
+
+    .coursework-section {
+      border-top: 1px solid var(--glass-border);
+      padding-top: 24px;
+    }
+
+    .coursework-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .coursework-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .course-tag {
+      padding: 6px 16px;
+      background: rgba(14,165,233,0.06);
+      border: 1px solid rgba(14,165,233,0.12);
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--sky-500);
+    }
+
+    /* ===== Publications ===== */
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+    }
+
+    .pub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .pub-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--glass-border-hover);
+    }
+
+    .pub-status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .pub-status.published { background: var(--emerald-500); }
+    .pub-status.preprint { background: #64748b; }
+    .pub-status.revision { background: var(--amber-500); }
+    .pub-status.submitted { background: var(--sky-500); }
+    .pub-status.preparation { background: var(--indigo-500); }
+
+    .pub-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-heading);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .pub-journal {
+      font-size: 0.8rem;
+      color: var(--text-accent);
+      margin-bottom: 8px;
+    }
+
+    .pub-authors {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .pub-finding {
+      font-size: 0.82rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .pub-finding strong {
+      color: var(--text-heading);
+    }
+
+    .pub-doi {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal-500);
+      text-decoration: none;
+      padding: 6px 14px;
+      background: rgba(13,147,115,0.06);
+      border-radius: var(--radius-pill);
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .pub-doi:hover {
+      background: rgba(13,147,115,0.12);
+    }
+
+    /* ===== Projects ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .project-type {
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: white;
+    }
+
+    .project-type.research { background: var(--teal-500); }
+    .project-type.engineering { background: var(--amber-500); }
+    .project-type.computational { background: var(--indigo-500); }
+    .project-type.feasibility { background: var(--sky-500); }
+
+    .project-dur {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .project-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-heading);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .project-desc {
+      font-size: 0.84rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .project-outcomes {
+      margin-bottom: 18px;
+    }
+
+    .outcome-item {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    .outcome-item::before {
+      content: '\2726';
+      position: absolute;
+      left: 0;
+      color: var(--teal-400);
+      font-size: 0.7rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tech-tag {
+      padding: 4px 12px;
+      background: var(--teal-100);
+      color: var(--teal-500);
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: default;
+      transition: transform 0.3s var(--ease-smooth);
+    }
+
+    .tech-tag:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== Skills ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 22px;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .skill-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .skill-icon {
+      font-size: 1.8rem;
+    }
+
+    .skill-name {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-heading);
+    }
+
+    .skill-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--teal-500);
+      margin-top: 2px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 10px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--teal-500), var(--teal-400), var(--sky-400));
+      width: 0%;
+      transition: width 1.5s var(--ease-smooth);
+    }
+
+    .skill-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-list li {
+      padding: 5px 0;
+      font-size: 0.82rem;
+      color: var(--text-body);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .skill-list li:last-child {
+      border-bottom: none;
+    }
+
+    .skill-list li::before {
+      content: '\25B8 ';
+      color: var(--teal-300);
+    }
+
+    /* ===== Certifications ===== */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      text-align: center;
+      transition: all 0.4s var(--ease-smooth);
+      cursor: default;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--glass-border-hover);
+    }
+
+    .cert-provider {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal-500);
+      margin-bottom: 12px;
+    }
+
+    .cert-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .cert-detail {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .cert-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal-500);
+      text-decoration: none;
+      padding: 8px 18px;
+      background: rgba(13,147,115,0.06);
+      border-radius: var(--radius-pill);
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .cert-link:hover {
+      background: rgba(13,147,115,0.12);
+    }
+
+    /* ===== Achievements ===== */
+    .ach-stats-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .ach-stat {
+      text-align: center;
+      padding: 20px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+    }
+
+    .ach-stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--text-heading);
+    }
+
+    .ach-stat-suffix {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      background: linear-gradient(135deg, #0d9373, #14b8a6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ach-stat-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .ach-filter {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .ach-filter-pill {
+      padding: 10px 22px;
+      border: 1.5px solid var(--glass-border);
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .ach-filter-pill:hover {
+      border-color: var(--teal-400);
+      color: var(--teal-500);
+    }
+
+    .ach-filter-pill.active {
+      background: linear-gradient(135deg, var(--teal-500), var(--teal-400));
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 20px rgba(13,147,115,0.2);
+    }
+
+    .ach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+    }
+
+    .ach-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all 0.4s var(--ease-smooth);
+    }
+
+    .ach-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg), inset 0 0 0 2px var(--teal-400);
+    }
+
+    .ach-card.hidden-filter {
+      display: none;
+    }
+
+    .ach-img-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .ach-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, white, transparent);
+      pointer-events: none;
+    }
+
+    .ach-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    .ken-burns {
+      animation: kenBurns 20s ease-in-out infinite alternate;
+    }
+
+    .ach-badges {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+    }
+
+    .ach-cat-badge {
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .ach-cat-badge.professional {
+      background: linear-gradient(135deg, #0d9373, #14b8a6);
+    }
+
+    .ach-cat-badge.academic {
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+    }
+
+    .ach-cat-badge.leadership {
+      background: linear-gradient(135deg, #d97706, #f59e0b);
+    }
+
+    .ach-year {
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: var(--radius-pill);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
+    .ach-body {
+      padding: 16px 22px 22px;
+    }
+
+    .ach-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-heading);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .ach-inst {
+      font-size: 0.78rem;
+      color: var(--text-accent);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .ach-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== Leadership ===== */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .lead-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .lead-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--glass-border-hover);
+    }
+
+    .lead-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .lead-role {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-heading);
+      margin-bottom: 6px;
+    }
+
+    .lead-org {
+      font-size: 0.82rem;
+      color: var(--text-accent);
+      margin-bottom: 10px;
+    }
+
+    .lead-dur {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 4px 12px;
+      background: rgba(13,147,115,0.05);
+      border-radius: var(--radius-pill);
+    }
+
+    /* ===== Contact ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--glass-border-hover);
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      font-size: 0.82rem;
+      color: var(--text-accent);
+      word-break: break-all;
+    }
+
+    /* ===== Lightbox ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,15,20,0.8);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--ease-smooth);
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 85%;
+      max-height: 85vh;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 30px 100px rgba(0,0,0,0.4);
+      transform: scale(0.92);
+      transition: transform 0.45s var(--ease-spring);
+    }
+
+    .lightbox.open img {
+      transform: scale(1);
+    }
+
+    .lightbox-x {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .lightbox-x:hover {
+      background: rgba(255,255,255,0.25);
+      transform: rotate(90deg);
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .footer-logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, var(--teal-500), var(--sky-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .footer-inner p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-accent);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Keyframe Animations ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes springIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      70% { transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes blurIn {
+      from { opacity: 0; filter: blur(8px); }
+      to { opacity: 1; filter: blur(0); }
+    }
+
+    @keyframes dropIn {
+      from { opacity: 0; transform: translateY(-40px) rotate(-3deg); }
+      to { opacity: 1; transform: translateY(0) rotate(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      50% { transform: scale(1.08); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes rubberBand {
+      0% { transform: scale(1); }
+      30% { transform: scaleX(1.15) scaleY(0.85); }
+      50% { transform: scaleX(0.9) scaleY(1.1); }
+      70% { transform: scaleX(1.05) scaleY(0.95); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes kenBurns {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.08) translate(-2%, -1%); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    @keyframes borderTrace {
+      from { box-shadow: inset 0 0 0 0 var(--teal-400); }
+      to { box-shadow: inset 0 0 0 2px var(--teal-400); }
+    }
+
+    /* ===== Animation Targets ===== */
+    .anim-target {
+      opacity: 0;
+    }
+
+    .anim-target.visible.fade-up {
+      animation: fadeUp 0.7s var(--ease-smooth) forwards;
+    }
+
+    .anim-target.visible.slide-left {
+      animation: slideLeft 0.7s var(--ease-smooth) forwards;
+    }
+
+    .anim-target.visible.slide-right {
+      animation: slideRight 0.7s var(--ease-smooth) forwards;
+    }
+
+    .anim-target.visible.scale-in {
+      animation: scaleIn 0.6s var(--ease-smooth) forwards;
+    }
+
+    .anim-target.visible.spring-in {
+      animation: springIn 0.6s var(--ease-spring) forwards;
+    }
+
+    .anim-target.visible.blur-in {
+      animation: blurIn 0.7s var(--ease-smooth) forwards;
+    }
+
+    .anim-target.visible.drop-in {
+      animation: dropIn 0.6s var(--ease-spring) forwards;
+    }
+
+    .anim-target.visible.bounce-in {
+      animation: bounceIn 0.5s var(--ease-spring) forwards;
+    }
+
+    .rubber-band:hover {
+      animation: rubberBand 0.6s ease;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .nav-container {
+        padding: 0 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 70px 0;
+      }
+
+      .section-inner {
+        padding: 0 20px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-photo-wrapper {
+        max-width: 300px;
+        margin: 0 auto 30px;
+      }
+
+      .mission-vision-row {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        padding-left: 30px;
+      }
+
+      .timeline-header {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(244,247,246,0.98);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid var(--glass-border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .pub-grid,
+      .projects-grid,
+      .skills-grid,
+      .ach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .landing-name {
+        font-size: 2.2rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .semester-row {
+        gap: 8px;
+      }
+
+      .sem-card {
+        padding: 10px 14px;
+      }
+
+      .landing-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stats-row,
+      .ach-stats-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Ambient Background ===== -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#landing" class="nav-logo">TB</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#landing" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#leadership" class="nav-link">Leadership</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Section 1: Landing ===== -->
+  <section class="landing-section section" id="landing">
+    <div class="landing-content">
+      <div class="landing-photo-wrapper anim-target fade-up">
+        <img src="profile_photo.jpeg" alt="Tejas Bhurse" class="landing-photo">
+      </div>
+
+      <h1 class="landing-name anim-target fade-up" style="animation-delay: 0.15s;">
+        <span class="typewriter" id="typewriterText"></span><span class="cursor">|</span>
+      </h1>
+
+      <p class="landing-designation anim-target fade-up" style="animation-delay: 0.3s;">
+        Chemical Engineering Researcher · Process Simulation & Sustainability
+      </p>
+
+      <p class="landing-intro anim-target fade-up" style="animation-delay: 0.45s;">
+        Passionate about leveraging computational tools and sustainable engineering principles to solve complex chemical process challenges. Currently pursuing an Integrated M.Tech in Chemical Engineering at ICT-IOCB, with research experience in biodiesel synthesis, process optimization, and energy-efficient systems.
+      </p>
+
+      <div class="landing-cta anim-target fade-up" style="animation-delay: 0.6s;">
+        <a href="#contact" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Get in Touch
+        </a>
+        <a href="#publications" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          View Research
+        </a>
+      </div>
+
+      <div class="landing-socials anim-target fade-up" style="animation-delay: 0.75s;">
+        <a href="https://github.com/Tejas250205" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/tejasbhurse" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:bhursetejas2@gmail.com" class="social-btn" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 2: About Me ===== -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip anim-target fade-up">
+          <span class="chip-dot"></span> About Me
+        </div>
+        <h2 class="section-title anim-target fade-up">Who I Am</h2>
+        <p class="section-subtitle anim-target fade-up">
+          A driven chemical engineering researcher committed to sustainable innovation and process excellence.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo-wrapper anim-target slide-left">
+          <img src="profile_photo.jpeg" alt="Tejas Bhurse" class="about-photo">
+        </div>
+
+        <div class="anim-target slide-right">
+          <p class="about-summary">
+            I'm Tejas Bhurse, pursuing an Integrated M.Tech in Chemical Engineering (Expected 2028) at the Institute of Chemical Technology, Mumbai – Indian Oil Odisha Campus (ICT-IOCB), with a minor in Petrochemical Technology &amp; Refinery Engineering. My work centers on sustainable energy systems and biorefineries, with a strong focus on process simulation and optimization.
+          </p>
+          <p class="about-summary">
+            Across research internships under Dr. Ritesh S. Malani and Dr. Ayantika Sett, I've simulated and optimized two-stage biodiesel production from high-FFA waste cooking oil in Aspen HYSYS — work that has produced one published paper and four manuscripts moving through revision and preparation. I'm also currently exploring self-organized criticality in neural networks with mentors at NCBS &amp; ICTS, and building toward an international PhD alongside a growing interest in patent &amp; IP law.
+          </p>
+
+          <div class="research-interest-tags" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+            <span class="course-tag">Sustainable Energy Systems &amp; Biorefineries</span>
+            <span class="course-tag">Process Systems Engineering</span>
+            <span class="course-tag">Process Simulation &amp; Optimization</span>
+            <span class="course-tag">Reaction Engineering</span>
+            <span class="course-tag">Heat Integration &amp; Carbon-Neutral Design</span>
+          </div>
+
+          <div class="mission-vision-row">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <span class="flip-icon">🎯</span>
+                  <h3>Mission</h3>
+                  <span class="flip-hint">Hover to reveal</span>
+                </div>
+                <div class="flip-card-back">
+                  <p>"To apply computational thinking and sustainable engineering principles to design processes that are efficient, economical, and environmentally responsible."</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <span class="flip-icon">🔭</span>
+                  <h3>Vision</h3>
+                  <span class="flip-hint">Hover to reveal</span>
+                </div>
+                <div class="flip-card-back">
+                  <p>"To become a leading researcher in green chemical engineering, contributing to a carbon-neutral future through innovative process design and renewable energy integration."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-nav-btns">
+            <a href="#experience" class="about-nav-pill">💼 Experience</a>
+            <a href="#publications" class="about-nav-pill">📄 Publications</a>
+            <a href="#projects" class="about-nav-pill">🚀 Projects</a>
+            <a href="#skills" class="about-nav-pill">⚡ Skills</a>
+            <a href="#certifications" class="about-nav-pill">🎖️ Certifications</a>
+            <a href="#achievements" class="about-nav-pill">🏆 Achievements</a>
+            <a href="#contact" class="about-nav-pill">📬 Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 3: Research Experience ===== -->
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip anim-target fade-up">
+          <span class="chip-dot"></span> Experience
+        </div>
+        <h2 class="section-title anim-target fade-up">Research Experience</h2>
+        <p class="section-subtitle anim-target fade-up">
+          Research internships and computational collaborations that have shaped my engineering perspective.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <!-- Role 1 -->
+        <div class="timeline-item anim-target fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Computational Research Project — Neural Avalanche Propagation (SOC)</div>
+                <div class="timeline-company">NCBS &amp; ICTS · Mentors: Dr. Abhilasha Joshi &amp; Dr. Sarthak Chandra</div>
+                <div class="timeline-location">📍 Remote / Collaborative</div>
+              </div>
+              <span class="timeline-duration">2026 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Developed a stochastic, sparse network model in MATLAB to simulate cortical avalanche propagation and self-organized criticality (SOC) in a 10×10 neural sheet.</li>
+              <li>Calibrated the network branching ratio near the critical threshold (λ = 0.95) via matrix eigenvalue scaling, ensuring a stable, non-divergent information cascade.</li>
+              <li>Processed large-scale simulation data (10⁵ avalanches) to extract cascade size/lifetime distributions, verifying alignment with theoretical power-law scaling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="timeline-item anim-target fade-up" style="animation-delay: 0.15s;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Research Intern — Biodiesel Process Simulation &amp; Optimization</div>
+                <div class="timeline-company">ICT-IOCB · Supervisor: Dr. Ritesh S. Malani</div>
+                <div class="timeline-location">📍 Bhubaneswar, India</div>
+              </div>
+              <span class="timeline-duration">Nov 2024 – May 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Designed and simulated a complete biodiesel production process in Aspen HYSYS, integrating reaction, separation, and purification sections.</li>
+              <li>Extracted and characterized non-edible Ashoka seed oil via sonication and Soxhlet extraction, assessing density, viscosity, and acid value of feedstock and product.</li>
+              <li>Built pseudo-component models and incorporated reaction kinetics for conversion prediction.</li>
+              <li>Conducted heat integration studies and optimized distillation column configurations to reduce process energy demand.</li>
+              <li>Performed sensitivity analyses across varying operating conditions to evaluate process efficiency.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="timeline-item anim-target fade-up" style="animation-delay: 0.3s;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Research Intern — High-Pressure Systems &amp; Solvent Engineering</div>
+                <div class="timeline-company">ICT-IOCB · Supervisor: Dr. Ayantika Sett</div>
+                <div class="timeline-location">📍 Bhubaneswar, India</div>
+              </div>
+              <span class="timeline-duration">Jun – Jul 2024</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Trained in operation of high-pressure reactors and analytical instruments, including UV-Vis spectrophotometer and refractometer.</li>
+              <li>Conducted literature review and sample preparation for Deep Eutectic Solvents (DES).</li>
+              <li>Performed laboratory calibration, vacuum filtration, and MATLAB-based data visualization.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 4: Education ===== -->
+  <section class="section" id="education">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip anim-target fade-up">
+          <span class="chip-dot"></span> Education
+        </div>
+        <h2 class="section-title anim-target fade-up">Academic Background</h2>
+        <p class="section-subtitle anim-target fade-up">
+          Building a strong foundation in chemical engineering and process technology.
+        </p>
+      </div>
+
+      <div class="edu-card anim-target scale-in">
+        <div class="edu-degree">Integrated M.Tech in Chemical Engineering</div>
+        <div class="edu-minor">Minor: Petrochemical Technology &amp; Refinery Engineering</div>
+        <div class="edu-institution">
+          <span class="inst-icon">🏛️</span> Institute of Chemical Technology, Mumbai – Indian Oil Odisha Campus (ICT-IOCB)
+        </div>
+        <div class="edu-duration">2023 – 2028</div>
+
+        <div class="edu-cgpa-highlight">
+          <div class="cgpa-big">
+            <span class="cgpa-number">9.04</span>
+            <span class="cgpa-of">/10</span>
+          </div>
+          <span class="cgpa-label">Cumulative Grade Point Average (after 4 semesters)</span>
+          <div class="scholarship-badge">🏅 Merit-cum-Means Scholarship Recipient</div>
+        </div>
+
+        <div class="semester-row">
+          <div class="sem-card">
+            <span class="sem-label">Sem I</span>
+            <span class="sem-gpa">9.45</span>
+          </div>
+          <div class="sem-card">
+            <span class="sem-label">Sem II</span>
+            <span class="sem-gpa">9.30</span>
+          </div>
+          <div class="sem-card">
+            <span class="sem-label">Sem III</span>
+            <span class="sem-gpa">9.17</span>
+          </div>
+          <div class="sem-card">
+            <span class="sem-label">Sem IV</span>
+            <span class="sem-gpa">9.04</span>
+          </div>
+        </div>
+
+        <div class="coursework-section">
+          <div class="coursework-title">Key Coursework</div>
+          <div class="coursework-tags">
+            <span class="course-tag">Reaction Engineering</span>
+            <span class="course-tag">Chemical Thermodynamics</span>
+            <span class="course-tag">Heat Transfer</span>
+            <span class="course-tag">Process Dynamics</span>
+            <span class="course-tag">Process Safety</span>
+            <span class="course-tag">Optimization Techniques</span>
+            <span class="course-tag">Process Simulation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 5: Publications ===== -->
+  <section class="section" id="publications">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip anim-target fade-up">
+          <span class="chip-dot"></span> Publications
+        </div>
+        <h2 class="section-title anim-target fade-up">Research Publications</h2>
+        <p class="section-subtitle anim-target fade-up">
+          One published paper and four manuscripts moving through revision and preparation, centered on Aspen HYSYS process simulation for sustainable biodiesel production.
+        </p>
+      </div>
+
+      <div class="pub-grid">
+        <div class="pub-card anim-target fade-up">
+          <span class="pub-status published">Published</span>
+          <h3 class="pub-title">Steady-State Simulation and Energy Analysis of a Two-Stage Heterogeneous Catalytic Process for Biodiesel Production from High-FFA Waste Cooking Oil Using Aspen HYSYS</h3>
+          <p class="pub-journal">Journal of Engineering and Applied Science · 73, Article 235 · 2026</p>
+          <p class="pub-authors">Bhurse, T. &amp; Sett, A.</p>
+          <p class="pub-finding"><strong>Key result:</strong> A two-stage SHER (acid esterification) + waste-mussel-shell CaO (base transesterification) system achieved 98.7% FFA conversion and 99.9% triglyceride conversion, with heat integration cutting specific energy use from 3.08 to as low as 1.66 MJ/kg.</p>
+          <a class="pub-doi" href="https://doi.org/10.1186/s44147-026-01090-8" target="_blank" rel="noopener">🔗 DOI: 10.1186/s44147-026-01090-8</a>
+        </div>
+
+        <div class="pub-card anim-target fade-up" style="animation-delay: 0.1s;">
+          <span class="pub-status preprint">Preprint</span>
+          <h3 class="pub-title">Simulation of Biodiesel from Waste Cooking Oil (WCO) in Aspen HYSYS and Its Optimization Study</h3>
+          <p class="pub-journal">ChemRxiv · Posted 15 Oct 2025 · Internationally Indexed</p>
+          <p class="pub-authors">Bhurse, T. G.</p>
+          <p class="pub-finding"><strong>Key result:</strong> A continuous two-stage CSTR system (65 °C, 6:1 methanol-to-oil ratio, 2 wt% KOH) reached ~99% triglyceride conversion, &gt;99% product purity, and ~98% methanol recovery via distillation.</p>
+        </div>
+
+        <div class="pub-card anim-target fade-up" style="animation-delay: 0.2s;">
+          <span class="pub-status revision">In Revision (with Faculty)</span>
+          <h3 class="pub-title">Defining a Feasible Industrial Operating Window for Waste Cooking Oil Biodiesel via Integrated Reaction–Separation Simulation</h3>
+          <p class="pub-journal">Co-author: Dr. Ayantika Sett</p>
+          <p class="pub-authors">Bhurse, T. &amp; Sett, A.</p>
+          <p class="pub-finding"><strong>Key result:</strong> ~96% FFA/triglyceride conversion within a Feasible Industrial Operating Window (FIOW) of 60–63 °C and 6.5–7.5:1 methanol-to-oil ratio; a Damköhler number of 3.77 confirms kinetically dominant operation.</p>
+        </div>
+
+        <div class="pub-card anim-target fade-up" style="animation-delay: 0.3s;">
+          <span class="pub-status submitted">Submitted, Under Revision</span>
+          <h3 class="pub-title">Solar-Thermal Intensification of Biodiesel Methanol Recovery: High-Resolution Thermodynamic Mapping and CSP Sizing for a Low-Carbon Circular Bioeconomy</h3>
+          <p class="pub-journal">Bioresource Technology Reports · Manuscript No. BITEB-D-26-01036</p>
+          <p class="pub-authors">Bhurse, T.</p>
+          <p class="pub-finding"><strong>Key result:</strong> A global energetic optimum of 2292 kJ/kg at 89 °C; at the recommended 105 °C operating point, 80.5% methanol recovery at &gt;99.89 wt% purity, ~136 m² CSP collector sizing, and a 2.45-year payback.</p>
+        </div>
+
+        <div class="pub-card anim-target fade-up" style="animation-delay: 0.4s;">
+          <span class="pub-status preparation">In Preparation</span>
+          <h3 class="pub-title">Purity-Constrained Operating Cost Minimum for a Single-Stage Methanol Flash Unit in Decentralized Biodiesel Production</h3>
+          <p class="pub-journal">Co-author: Sushma Chakraborty</p>
+          <p class="pub-authors">Bhurse, T. &amp; Chakraborty, S.</p>
+          <p class="pub-finding"><strong>Key result:</strong> A 130–136 °C safe operating window for a 1 TPD plant delivers &gt;90% solvent recovery and &gt;99 wt% purity, keeping annualized costs within 2% of the mathematical minimum (~2,230 USD/yr).</p>
+        </div>
+
+        <div class="pub-card anim-target fade-up" style="animation-delay: 0.5s;">
+          <span class="pub-status preparation">In Preparation · Review</span>
+          <h3 class="pub-title">Thermal Energy Storage for Energy Systems: A Short Review of Performance Limitations and Research Gaps</h3>
+          <p class="pub-journal">Co-author: Dr. Ayantika Sett</p>
+          <p class="pub-authors">Sett, A. &amp; Bhurse, T.</p>
+          <p class="pub-finding"><strong>Key result:</strong> Reviews sensible, latent, and thermochemical storage limitations, highlighting the gap between India's &gt;750 GW solar potential and ~101 MW of installed CSP–TES capacity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 6: Projects ===== -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip anim-target fade-up">
+          <span class="chip-dot"></span> Projects
+        </div>
+        <h2 class="section-title anim-target fade-up">Featured Projects</h2>
+        <p class="section-subtitle anim-target fade-up">
+          Hands-on engineering and feasibility work — distinct from the research and publications above.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card anim-target fade-up">
+          <div class="project-header">
+            <span class="project-type engineering">Engineering</span>
+            <span class="project-dur">2024 – 2025</span>
+          </div>
+          <h3 class="project-title">Aluminum–Air Battery System — Chem-E-Car Competition</h3>
+          <p class="project-desc">As Research Lead of Team Aluminator (AIChE ICT-IOCB), designed and optimized an aluminum-air battery system from concept through full implementation, with a custom Deep-Eutectic-Solvent-based electrolyte formulation.</p>
+          <div class="project-outcomes">
+            <div class="outcome-item">Stable electrochemical performance: 1.5–1.6 V operating potential, &gt;200 mA output current</div>
+            <div class="outcome-item">Delivered a 3 kg payload over 21 m in 1.45 minutes during the competition run</div>
+            <div class="outcome-item">1st Prize, NAIMISHYA AIChE India SRC 2025 — selected for the AIChE Student Conference (ASC), MIT, USA</div>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Electrochemistry</span>
+            <span class="tech-tag">DES Electrolyte</span>
+            <span class="tech-tag">Reaction Engineering</span>
+          </div>
+        </div>
+
+        <div class="project-card anim-target fade-up" style="animation-delay: 0.1s;">
+          <div class="project-header">
+            <span class="project-type feasibility">Feasibility</span>
+            <span class="project-dur">2025</span>
+          </div>
+          <h3 class="project-title">Solar-Thermal (CSP) Energy Systems for Mining Applications</h3>
+          <p class="project-desc">Built for the Smart India Hackathon (SIH), this study evaluated CSP-based thermal energy systems as a sustainable power option for energy-intensive mining operations through solar-thermal energy analysis and process-level simulation.</p>
+          <div class="project-outcomes">
+            <div class="outcome-item">Feasibility study assessing power generation potential for mining operations</div>
+            <div class="outcome-item">Proposed hybrid energy utilization strategies for energy-intensive sites</div>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">CSP</span>
+            <span class="tech-tag">Process Simulation</span>
+            <span class="tech-tag">Feasibility Study</span>
+          </div>
+        </div>
+
+        <div class="project-card anim-target fade-up" style="animation-delay: 0.2s;">
+          <div class="project-header">
+            <span class="project-type feasibility">Community</span>
+            <span class="project-dur">May 2025</span>
+          </div>
+          <h3 class="project-title">Community Engineering Project — Unmukt Foundation</h3>
+          <p class="project-desc">A 60-hour community engineering engagement designing low-cost household solutions and mentoring children across five local communities in Bhubaneswar.</p>
+          <div class="project-outcomes">
+            <div class="outcome-item">Designed a citric-acid-based water-softening tablet (~₹2.60/10 g) for household hard-water treatment</div>
+            <div class="outcome-item">Developed an automatic water-stopping mechanism to prevent overhead-tank overflow</div>
+            <div class="outcome-item">Proposed a low-cost activated-charcoal air filtration concept; mentored 100+ children</div>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Water Treatment</span>
+            <span class="tech-tag">Low-Cost Design</span>
+            <span class="tech-tag">Community Engineering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 7: Skills ===== -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip anim-target fade-up">
+          <span class="chip-dot"></span> Skills
+        </div>
+        <h2 class="section-title anim-target fade-up">Technical Skillset</h2>
+        <p class="section-subtitle anim-target fade-up">
+          Core process engineering tools, computational methods, and an emerging interest in patent &amp; IP law.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card anim-target fade-up">
+          <div class="skill-header">
+            <span class="skill-icon">⚙️</span>
+            <div>
+              <div class="skill-name">Process Simulation</div>
+              <div class="skill-pct" data-target="95">0%</div>
+            </div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="95"></div></div>
+          <ul class="skill-list">
+            <li>Aspen HYSYS, Aspen Plus &amp; DWSIM</li>
+            <li>Heat integration &amp; pinch analysis</li>
+            <li>Distillation &amp; process optimization</li>
+          </ul>
+        </div>
+
+        <div class="skill-card anim-target fade-up" style="animation-delay: 0.1s;">
+          <div class="skill-header">
+            <span class="skill-icon">🧪</span>
+            <div>
+              <div class="skill-name">Thermodynamics &amp; Kinetics</div>
+              <div class="skill-pct" data-target="88">0%</div>
+            </div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="88"></div></div>
+          <ul class="skill-list">
+            <li>NRTL &amp; UNIQUAC modeling</li>
+            <li>Rate kinetics</li>
+            <li>VLE &amp; LLE characterization</li>
+          </ul>
+        </div>
+
+        <div class="skill-card anim-target fade-up" style="animation-delay: 0.2s;">
+          <div class="skill-header">
+            <span class="skill-icon">💻</span>
+            <div>
+              <div class="skill-name">Programming &amp; Computational Tools</div>
+              <div class="skill-pct" data-target="85">0%</div>
+            </div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="85"></div></div>
+          <ul class="skill-list">
+            <li>MATLAB, Simulink &amp; Stateflow</li>
+            <li>Python</li>
+            <li>MS Excel</li>
+          </ul>
+        </div>
+
+        <div class="skill-card anim-target fade-up" style="animation-delay: 0.3s;">
+          <div class="skill-header">
+            <span class="skill-icon">🔬</span>
+            <div>
+              <div class="skill-name">Laboratory Techniques</div>
+              <div class="skill-pct" data-target="80">0%</div>
+            </div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="80"></div></div>
+          <ul class="skill-list">
+            <li>UV-Vis spectroscopy</li>
+            <li>Soxhlet &amp; sonication extraction</li>
+            <li>High-pressure reactor operation &amp; refractometer calibration</li>
+          </ul>
+        </div>
+
+        <div class="skill-card anim-target fade-up" style="animation-delay: 0.4s;">
+          <div class="skill-header">
+            <span class="skill-icon">🛡️</span>
+            <div>
+              <div class="skill-name">Process Safety</div>
+              <div class="skill-pct" data-target="78">0%</div>
+            </div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="78"></div></div>
+          <ul class="skill-list">
+            <li>Risk-Based Process Safety (RBPS) frameworks</li>
+            <li>Hazard identification</li>
+            <li>AIChE CCPS-certified</li>
+          </ul>
+        </div>
+
+        <div class="skill-card anim-target fade-up" style="animation-delay: 0.5s;">
+          <div class="skill-header">
+            <span class="skill-icon">⚖️</span>
+            <div>
+              <div class="skill-name">Patent &amp; IP Law — Emerging</div>
+              <div class="skill-pct" data-target="50">0%</div>
+            </div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="50"></div></div>
+          <ul class="skill-list">
+            <li>Patent fundamentals &amp; IP strategy</li>
+            <li>Exploring the Patent Agent Examination</li>
+            <li>Tracking PSU, CSIR &amp; Indian Patent Office pathways</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 8: Scholarships & Certifications ===== -->
+  <section class="section" id="certifications">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip anim-target fade-up">
+          <span class="chip-dot"></span> Certifications
+        </div>
+        <h2 class="section-title anim-target fade-up">Scholarships &amp; Certifications</h2>
+        <p class="section-subtitle anim-target fade-up">
+          Formal training and recognitions earned alongside coursework and research.
+        </p>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card anim-target spring-in">
+          <div class="cert-provider">AIChE CCPS</div>
+          <h3 class="cert-title">Risk-Based Process Safety Decision Making for All Engineers</h3>
+          <p class="cert-detail">6 PDH · 0.60 CEU</p>
+        </div>
+        <div class="cert-card anim-target spring-in" style="animation-delay: 0.1s;">
+          <div class="cert-provider">MathWorks</div>
+          <h3 class="cert-title">MATLAB Onramp</h3>
+          <p class="cert-detail">Completion Certificate</p>
+        </div>
+        <div class="cert-card anim-target spring-in" style="animation-delay: 0.2s;">
+          <div class="cert-provider">MathWorks</div>
+          <h3 class="cert-title">Simulink Onramp</h3>
+          <p class="cert-detail">Completion Certificate</p>
+        </div>
+        <div class="cert-card anim-target spring-in" style="animation-delay: 0.3s;">
+          <div class="cert-provider">MathWorks</div>
+          <h3 class="cert-title">Stateflow Onramp</h3>
+          <p class="cert-detail">Completion Certificate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- SECTION 9 -->
+<section id="achievements" class="section">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-chip"><span class="chip-dot"></span>Achievements</div>
+      <h2 class="section-title">Achievements &amp; Recognition</h2>
+      <p class="section-subtitle">Recognized for excellence in research, engineering design, and academic performance</p>
+    </div>
+    <div class="ach-stats-row" id="ach-stats-row">
+      <div class="ach-stat"><span class="ach-stat-num" data-target="2">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Years Research Experience</span></div>
+      <div class="ach-stat"><span class="ach-stat-num" data-target="4">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Certifications</span></div>
+      <div class="ach-stat"><span class="ach-stat-num" data-target="12">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Research Outputs</span></div>
+      <div class="ach-stat"><span class="ach-stat-num" data-target="9">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Awards</span></div>
+    </div>
+    <div class="ach-filter">
+      <button class="ach-filter-pill active" data-filter="all">All</button>
+      <button class="ach-filter-pill" data-filter="Professional">⚙ Professional</button>
+      <button class="ach-filter-pill" data-filter="Academic">🎓 Academic</button>
+      <button class="ach-filter-pill" data-filter="Leadership">👑 Leadership</button>
+    </div>
+    <div class="ach-grid" id="ach-grid">
+      <div class="ach-card anim-target spring-in" data-category="Professional">
+        <div class="ach-img-wrap">
+          <img class="ach-img ken-burns" src="achievements_folder/chem_e_car_1st.jpeg" alt="1st Prize — Chem-E-Car Performance Run" loading="lazy">
+          <div class="ach-badges">
+            <span class="ach-cat-badge professional">⚙ Professional</span>
+            <span class="ach-year">2025</span>
+          </div>
+        </div>
+        <div class="ach-body">
+          <h3 class="ach-title">1st Prize — Chem-E-Car Performance Run</h3>
+          <p class="ach-inst">🏛️ NAIMISHYA, AIChE India SRC 2025</p>
+          <p class="ach-desc">Led Team Aluminator to 1st position, delivering a 3 kg payload over 21 m in 1.45 minutes. Selected for AIChE Student Conference (ASC), MIT, USA.</p>
+        </div>
+      </div>
+      <div class="ach-card anim-target spring-in" data-category="Academic">
+        <div class="ach-img-wrap">
+          <img class="ach-img ken-burns" src="achievements_folder/chem_e_jeopardy_1st.jpeg" alt="Runners-up — Quiziofyte 3.0 (Chem-E-Jeopardy)" loading="lazy">
+          <div class="ach-badges">
+            <span class="ach-cat-badge academic">🎓 Academic</span>
+            <span class="ach-year">2025</span>
+          </div>
+        </div>
+        <div class="ach-body">
+          <h3 class="ach-title">Runners-up — Quiziofyte 3.0 (Chem-E-Jeopardy)</h3>
+          <p class="ach-inst">🏛️ AIChE ICT-IOC Student Chapter</p>
+          <p class="ach-desc">Secured Runners-up position in Chem-E-Jeopardy event.</p>
+        </div>
+      </div>
+      <div class="ach-card anim-target spring-in" data-category="Academic">
+        <div class="ach-img-wrap">
+          <img class="ach-img ken-burns" src="achievements_folder/mun_2st.jpeg" alt="Runners-up — CONSENSUS (Model United Nations)" loading="lazy">
+          <div class="ach-badges">
+            <span class="ach-cat-badge academic">🎓 Academic</span>
+            <span class="ach-year">2025</span>
+          </div>
+        </div>
+        <div class="ach-body">
+          <h3 class="ach-title">Runners-up — CONSENSUS (Model United Nations)</h3>
+          <p class="ach-inst">🏛️ AIChE ICT-IOC Student Chapter</p>
+          <p class="ach-desc">Secured Runners-up position in Model United Nations event.</p>
+        </div>
+      </div>
+      <div class="ach-card anim-target spring-in" data-category="Academic">
+        <div class="ach-img-wrap">
+          <img class="ach-img ken-burns" src="achievements_folder/quiziofyte_3rd.jpeg" alt="3rd Position — Quiziofyte" loading="lazy">
+          <div class="ach-badges">
+            <span class="ach-cat-badge academic">🎓 Academic</span>
+            <span class="ach-year">2023</span>
+          </div>
+        </div>
+        <div class="ach-body">
+          <h3 class="ach-title">3rd Position — Quiziofyte</h3>
+          <p class="ach-inst">🏛️ SWANIRVAHAN, ICT-IOCB</p>
+          <p class="ach-desc">Secured 3rd position in flagship event organized by ICT-IOCB Student Chapter.</p>
+        </div>
+      </div>
+      <div class="ach-card anim-target spring-in" data-category="Professional">
+        <div class="ach-img-wrap">
+          <img class="ach-img ken-burns" src="achievements_folder/indiaskills_certificate.jpeg" alt="Certificate of Appreciation — IndiaSkills 2025-26" loading="lazy">
+          <div class="ach-badges">
+            <span class="ach-cat-badge professional">⚙ Professional</span>
+            <span class="ach-year">2026</span>
+          </div>
+        </div>
+        <div class="ach-body">
+          <h3 class="ach-title">Certificate of Appreciation — IndiaSkills 2025-26</h3>
+          <p class="ach-inst">🏛️ IndiaSkills (Skill India, NCVET, NSDC, LSSSDC)</p>
+          <p class="ach-desc">Recognized for outstanding contribution in Chemical Laboratory Technology Skill Competition.</p>
+        </div>
+      </div>
+      <div class="ach-card anim-target spring-in" data-category="Academic">
+        <div class="ach-img-wrap">
+          <img class="ach-img ken-burns" src="achievements_folder/INT_CONFERENCE.jpeg" alt="Participant — ICFMPT-2024" loading="lazy">
+          <div class="ach-badges">
+            <span class="ach-cat-badge academic">🎓 Academic</span>
+            <span class="ach-year">2024</span>
+          </div>
+        </div>
+        <div class="ach-body">
+          <h3 class="ach-title">Participant — ICFMPT-2024</h3>
+          <p class="ach-inst">🏛️ International Conference on Functional Materials and Polymer Technology</p>
+          <p class="ach-desc">Participated in the International Conference on Functional Materials and Polymer Technology.</p>
+        </div>
+      </div>
+      <div class="ach-card anim-target spring-in" data-category="Leadership">
+        <div class="ach-img-wrap">
+          <img class="ach-img ken-burns" src="achievements_folder/K12_Cordinator.jpeg" alt="K-12 STEM Outreach Coordinator" loading="lazy">
+          <div class="ach-badges">
+            <span class="ach-cat-badge leadership">👑 Leadership</span>
+            <span class="ach-year">2024-25</span>
+          </div>
+        </div>
+        <div class="ach-body">
+          <h3 class="ach-title">K-12 STEM Outreach Coordinator</h3>
+          <p class="ach-inst">🏛️ AIChE ICT-IOCB Chapter</p>
+          <p class="ach-desc">Served as K-12 Coordinator for the American Institute of Chemical Engineers (AIChE) ICT-IOCB Chapter.</p>
+        </div>
+      </div>
+      <div class="ach-card anim-target spring-in" data-category="Academic">
+        <div class="ach-body" style="padding-top: 22px;">
+          <div style="display:flex; gap:8px; margin-bottom:12px;">
+            <span class="ach-cat-badge academic">🎓 Academic</span>
+            <span class="ach-year">2024</span>
+          </div>
+          <h3 class="ach-title">Finalist — ChemUN (Model United Nations)</h3>
+          <p class="ach-inst">🏛️ AIChE India SRC 2024, NIT Rourkela</p>
+          <p class="ach-desc">Reached the finals of ChemUN at the AIChE India Student Regional Conference.</p>
+        </div>
+      </div>
+      <div class="ach-card anim-target spring-in" data-category="Leadership">
+        <div class="ach-body" style="padding-top: 22px;">
+          <div style="display:flex; gap:8px; margin-bottom:12px;">
+            <span class="ach-cat-badge leadership">👑 Leadership</span>
+            <span class="ach-year">2026</span>
+          </div>
+          <h3 class="ach-title">Certificate of Appreciation — Voluntary Blood Donation</h3>
+          <p class="ach-inst">🏛️ Commissionerate Police, Bhubaneswar-Cuttack · ICT-IOCB Campus</p>
+          <p class="ach-desc">Recognized for voluntary blood donation at a camp held on the ICT-IOCB campus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10 -->
+<section id="leadership" class="section">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-chip"><span class="chip-dot"></span>Leadership</div>
+      <h2 class="section-title">Leadership &amp; Extracurricular</h2>
+      <p class="section-subtitle">Taking initiative and building community impact</p>
+    </div>
+    <div class="leadership-grid">
+      <div class="lead-card anim-target fade-up"><span class="lead-icon">🏎️</span><h3 class="lead-role">Chem-E-Car Coordinator</h3><p class="lead-org">AIChE ICT-IOCB Student Chapter</p><span class="lead-dur">2025–26</span></div>
+      <div class="lead-card anim-target fade-up"><span class="lead-icon">🔬</span><h3 class="lead-role">Research Lead Team Aluminator</h3><p class="lead-org">AIChE ICT-IOCB Student Chapter</p><span class="lead-dur">2024–25</span></div>
+      <div class="lead-card anim-target fade-up"><span class="lead-icon">👨‍🏫</span><h3 class="lead-role">K-12 STEM Outreach Coordinator</h3><p class="lead-org">AIChE ICT-IOCB Student Chapter</p><span class="lead-dur">2024–25</span></div>
+      <div class="lead-card anim-target fade-up"><span class="lead-icon">🏠</span><h3 class="lead-role">Hostel &amp; Mess Committee Member</h3><p class="lead-org">ICT-IOCB</p><span class="lead-dur">2024–Present</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 11 -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-chip"><span class="chip-dot"></span>Contact</div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Reach out for collaborations, research opportunities, or just to connect</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card anim-target fade-up" href="mailto:bhursetejas2@gmail.com"><span class="contact-icon">📧</span><h3 class="contact-label">Email</h3><p class="contact-value">bhursetejas2@gmail.com</p></a>
+      <a class="contact-card anim-target fade-up" href="tel:+919699467833"><span class="contact-icon">📱</span><h3 class="contact-label">Phone</h3><p class="contact-value">+91-9699467833</p></a>
+      <div class="contact-card anim-target fade-up"><span class="contact-icon">📍</span><h3 class="contact-label">Location</h3><p class="contact-value">Bhubaneswar, Odisha, India</p></div>
+      <a class="contact-card anim-target fade-up" href="https://linkedin.com/in/tejasbhurse" target="_blank" rel="noopener"><span class="contact-icon">💼</span><h3 class="contact-label">LinkedIn</h3><p class="contact-value">linkedin.com/in/tejasbhurse</p></a>
+      <a class="contact-card anim-target fade-up" href="https://github.com/Tejas250205" target="_blank" rel="noopener"><span class="contact-icon">🐙</span><h3 class="contact-label">GitHub</h3><p class="contact-value">github.com/Tejas250205</p></a>
+      <a class="contact-card anim-target fade-up" href="https://orcid.org/0009-0007-1083-1771" target="_blank" rel="noopener"><span class="contact-icon">🆔</span><h3 class="contact-label">ORCID</h3><p class="contact-value">0009-0007-1083-1771</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-x" id="lightbox-x" aria-label="Close">✕</button>
+  <img src="" alt="" id="lightbox-img">
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-logo">TB</span>
+    <p>&copy; 2026 Tejas Bhurse. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Tejas250205" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/tejasbhurse" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://orcid.org/0009-0007-1083-1771" target="_blank" rel="noopener">ORCID</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ========== 1. TYPEWRITER ========== */
+  const twEl = document.getElementById('typewriter');
+  if (twEl) {
+    const twText = 'Tejas Ganpat Bhurse';
+    let twIdx = 0;
+    (function typeChar() {
+      if (twIdx < twText.length) {
+        twEl.textContent += twText.charAt(twIdx);
+        twIdx++;
+        setTimeout(typeChar, 80);
+      }
+    })();
+  }
+
+  /* ========== 2. NAVBAR ========== */
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.getElementById('nav-links');
+  const navToggle = document.getElementById('nav-toggle');
+  const allNavLinks = document.querySelectorAll('.nav-link');
+
+  // Scroll class
+  window.addEventListener('scroll', function () {
+    if (navbar) {
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+  });
+
+  // Active link tracking
+  const sections = document.querySelectorAll('.section');
+  if (sections.length) {
+    const navObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          allNavLinks.forEach(function (link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(function (sec) { navObserver.observe(sec); });
+  }
+
+  // Mobile toggle
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+    });
+    allNavLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+
+  /* ========== 3. SMOOTH SCROLL ========== */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        const top = targetEl.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ========== 4. SCROLL ANIMATIONS ========== */
+  const animTargets = document.querySelectorAll('.anim-target');
+  if (animTargets.length) {
+    const animObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = el.getAttribute('data-delay');
+          if (delay) {
+            setTimeout(function () { el.classList.add('visible'); }, parseInt(delay, 10));
+          } else {
+            el.classList.add('visible');
+          }
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '-40px' });
+
+    // Stagger children within the same parent that share the same animation class
+    const staggerParents = new Set();
+    animTargets.forEach(function (el) { staggerParents.add(el.parentElement); });
+    staggerParents.forEach(function (parent) {
+      const children = parent.querySelectorAll(':scope > .anim-target');
+      if (children.length > 1) {
+        children.forEach(function (child, i) {
+          if (!child.getAttribute('data-delay')) {
+            child.setAttribute('data-delay', String(i * 100));
+          }
+        });
+      }
+    });
+
+    animTargets.forEach(function (el) { animObserver.observe(el); });
+  }
+
+  /* ========== 5. CGPA COUNTER ========== */
+  const cgpaEl = document.querySelector('.cgpa-number');
+  if (cgpaEl) {
+    const cgpaObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const target = parseFloat(entry.target.getAttribute('data-target'));
+          const duration = 2000;
+          const start = performance.now();
+          function animateCGPA(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            entry.target.textContent = (target * eased).toFixed(2);
+            if (progress < 1) {
+              requestAnimationFrame(animateCGPA);
+            } else {
+              entry.target.textContent = target.toFixed(2);
+            }
+          }
+          requestAnimationFrame(animateCGPA);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    cgpaObserver.observe(cgpaEl);
+  }
+
+  /* ========== 6. SKILLS PROGRESS ========== */
+  const skillCards = document.querySelectorAll('.skill-card');
+  if (skillCards.length) {
+    const skillObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const fill = card.querySelector('.progress-fill');
+          const pct = card.querySelector('.skill-pct');
+          if (fill) {
+            const width = fill.getAttribute('data-width');
+            fill.style.width = width + '%';
+          }
+          if (pct) {
+            const target = parseInt(pct.getAttribute('data-target'), 10);
+            const duration = 1500;
+            const start = performance.now();
+            function animateSkill(now) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              pct.textContent = Math.round(target * eased) + '%';
+              if (progress < 1) {
+                requestAnimationFrame(animateSkill);
+              } else {
+                pct.textContent = target + '%';
+              }
+            }
+            requestAnimationFrame(animateSkill);
+          }
+          observer.unobserve(card);
+        }
+      });
+    }, { threshold: 0.1 });
+    skillCards.forEach(function (card) { skillObserver.observe(card); });
+  }
+
+  /* ========== 7. ACHIEVEMENT STATS ========== */
+  const achStatsRow = document.getElementById('ach-stats-row');
+  if (achStatsRow) {
+    const achObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const nums = entry.target.querySelectorAll('.ach-stat-num');
+          nums.forEach(function (num) {
+            const target = parseInt(num.getAttribute('data-target'), 10);
+            const duration = 1500;
+            const start = performance.now();
+            function animateStat(now) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              num.textContent = Math.round(target * eased);
+              if (progress < 1) {
+                requestAnimationFrame(animateStat);
+              } else {
+                num.textContent = target;
+              }
+            }
+            requestAnimationFrame(animateStat);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    achObserver.observe(achStatsRow);
+  }
+
+  /* ========== 8. ACHIEVEMENT FILTER ========== */
+  const filterPills = document.querySelectorAll('.ach-filter-pill');
+  const achCards = document.querySelectorAll('.ach-card');
+  filterPills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      filterPills.forEach(function (p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      const filter = pill.getAttribute('data-filter');
+      achCards.forEach(function (card) {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('hidden-filter');
+          card.classList.remove('visible');
+          requestAnimationFrame(function () {
+            card.classList.add('visible');
+          });
+        } else {
+          card.classList.add('hidden-filter');
+        }
+      });
+    });
+  });
+
+  /* ========== 9. LIGHTBOX ========== */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxX = document.getElementById('lightbox-x');
+
+  document.querySelectorAll('.ach-img').forEach(function (img) {
+    img.addEventListener('click', function () {
+      if (lightbox && lightboxImg) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (lightboxX) {
+    lightboxX.addEventListener('click', closeLightbox);
+  }
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      if (e.target !== lightboxImg) {
+        closeLightbox();
+      }
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+
+  /* ========== 10. CERT TILT ========== */
+  document.querySelectorAll('.cert-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      const rect = card.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = e.clientX - cx;
+      const dy = e.clientY - cy;
+      const maxDeg = 5;
+      const rotateX = -(dy / (rect.height / 2)) * maxDeg;
+      const rotateY = (dx / (rect.width / 2)) * maxDeg;
+      card.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transition = 'transform 0.4s ease';
+      card.style.transform = 'none';
+      setTimeout(function () { card.style.transition = ''; }, 400);
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
