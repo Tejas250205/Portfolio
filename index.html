@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tejas Bhurse — Portfolio</title>
-  <meta name="description" content="Portfolio of Tejas Bhurse — Chemical Engineering researcher specializing in process simulation, optimization, and sustainable engineering solutions.">
+  <title>Tejas Bhurse — Chemical Engineering Researcher</title>
+  <meta name="description" content="Portfolio of Tejas Bhurse — Chemical Engineering researcher specializing in process simulation, sustainable energy, and computational modelling.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -95,7 +95,7 @@
       background: rgba(13,147,115,0.4);
     }
 
-    /* ===== Ambient Background ===== */
+    /* ===== Ambient Background with Chemical Pattern ===== */
     .hero-bg {
       position: fixed;
       top: 0;
@@ -104,6 +104,7 @@
       height: 100%;
       z-index: -2;
       pointer-events: none;
+      overflow: hidden;
     }
 
     .hero-bg::before {
@@ -130,6 +131,7 @@
       animation: float 25s ease-in-out infinite reverse;
     }
 
+    /* Chemical hex pattern overlay */
     .grid-overlay {
       position: fixed;
       top: 0;
@@ -138,10 +140,9 @@
       height: 100%;
       z-index: -1;
       pointer-events: none;
-      background-image:
-        linear-gradient(rgba(0,0,0,0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.015) 1px, transparent 1px);
-      background-size: 60px 60px;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%230d9373' fill-opacity='0.03'%3E%3Cpath d='M40 0 L80 20 L80 60 L40 80 L0 60 L0 20 Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
     }
 
     /* ===== Navigation ===== */
@@ -876,7 +877,7 @@
     .pub-status.preprint { background: #64748b; }
     .pub-status.revision { background: var(--amber-500); }
     .pub-status.submitted { background: var(--sky-500); }
-    .pub-status.preparation { background: var(--indigo-500); }
+    .pub-status.review { background: var(--indigo-500); }
 
     .pub-title {
       font-family: 'Outfit', sans-serif;
@@ -1842,7 +1843,7 @@
       </p>
 
       <p class="landing-intro anim-target fade-up" style="animation-delay: 0.45s;">
-        Passionate about leveraging computational tools and sustainable engineering principles to solve complex chemical process challenges. Currently pursuing an Integrated M.Tech in Chemical Engineering at ICT-IOCB, with research experience in biodiesel synthesis, process optimization, and energy-efficient systems.
+        I am a chemical engineering researcher interested in applying computational modelling and process simulation to solve complex engineering problems. My work spans process systems engineering, reaction engineering, sustainable energy technologies, process optimization, and interdisciplinary computational research. Through industrial internships and academic research, I have worked on biodiesel production, thermodynamic process modelling, techno-economic analysis, computational neuroscience, and advanced materials for thermal management.
       </p>
 
       <div class="landing-cta anim-target fade-up" style="animation-delay: 0.6s;">
@@ -1860,7 +1861,7 @@
         <a href="https://github.com/Tejas250205" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
           <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
         </a>
-        <a href="https://linkedin.com/in/tejasbhurse" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/tejas-bhurse-72b752296" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="mailto:bhursetejas2@gmail.com" class="social-btn" aria-label="Email">
@@ -1890,18 +1891,19 @@
 
         <div class="anim-target slide-right">
           <p class="about-summary">
-            I'm Tejas Bhurse, pursuing an Integrated M.Tech in Chemical Engineering (Expected 2028) at the Institute of Chemical Technology, Mumbai – Indian Oil Odisha Campus (ICT-IOCB), with a minor in Petrochemical Technology &amp; Refinery Engineering. My work centers on sustainable energy systems and biorefineries, with a strong focus on process simulation and optimization.
+            I am a chemical engineering researcher interested in applying computational modelling and process simulation to solve complex engineering problems. My work spans process systems engineering, reaction engineering, sustainable energy technologies, process optimization, and interdisciplinary computational research. Through industrial internships and academic research, I have worked on biodiesel production, thermodynamic process modelling, techno-economic analysis, computational neuroscience, and advanced materials for thermal management.
           </p>
           <p class="about-summary">
-            Across research internships under Dr. Ritesh S. Malani and Dr. Ayantika Sett, I've simulated and optimized two-stage biodiesel production from high-FFA waste cooking oil in Aspen HYSYS — work that has produced one published paper and some manuscripts moving through preparation. I'm also currently exploring self-organized criticality in neural networks with mentors at NCBS &amp; ICTS.
+            I aspire to contribute to the next generation of computational chemical engineering by integrating process systems engineering, scientific computing, and machine learning. My current research focuses on process simulation, reaction engineering, sustainable energy systems, and data-driven modelling, with experience spanning both industrial and interdisciplinary academic research.
           </p>
 
           <div class="research-interest-tags" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
-            <span class="course-tag">Sustainable Energy Systems &amp; Biorefineries</span>
             <span class="course-tag">Process Systems Engineering</span>
+            <span class="course-tag">Sustainable Energy &amp; Biorefineries</span>
             <span class="course-tag">Process Simulation &amp; Optimization</span>
             <span class="course-tag">Reaction Engineering</span>
-            <span class="course-tag">Heat Integration &amp; Carbon-Neutral Design</span>
+            <span class="course-tag">Heat Integration &amp; Carbon Capture</span>
+            <span class="course-tag">Computational Neuroscience</span>
           </div>
 
           <div class="mission-vision-row">
@@ -1913,7 +1915,7 @@
                   <span class="flip-hint">Hover to reveal</span>
                 </div>
                 <div class="flip-card-back">
-                  <p>"To apply computational thinking and sustainable engineering principles to design processes that are efficient, economical, and environmentally responsible."</p>
+                  <p>"Develop safer, more sustainable, and computationally optimized chemical processes through simulation, data-driven engineering, and interdisciplinary research."</p>
                 </div>
               </div>
             </div>
@@ -1926,7 +1928,7 @@
                   <span class="flip-hint">Hover to reveal</span>
                 </div>
                 <div class="flip-card-back">
-                  <p>"To become a leading researcher in green chemical engineering, contributing to a carbon-neutral future through innovative process design and renewable energy integration."</p>
+                  <p>"Become an independent researcher developing advanced computational tools for process design, optimization, safety, and industrial decarbonization."</p>
                 </div>
               </div>
             </div>
@@ -1960,83 +1962,102 @@
       </div>
 
       <div class="timeline">
-        <!-- Current Work Role -->
+        <!-- 1. Dow Chemicals -->
         <div class="timeline-item anim-target fade-up">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <div class="timeline-role">Undergraduate Researcher</div>
-                <div class="timeline-company">ICT-IOCB · Supervisors: Dr. Ayantika Sett &amp; Dr. Sushma Chakraborty</div>
-                <div class="timeline-location">📍 Bhubaneswar, India</div>
+                <div class="timeline-role">Intern — Vacuum Insulated Panel Technology Assessment</div>
+                <div class="timeline-company">Dow Chemicals · Supervisor: Mohan Doss</div>
+                <div class="timeline-location">📍 India</div>
               </div>
-              <span class="timeline-duration">Current</span>
+              <span class="timeline-duration">Jun – Aug 2026</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Working on defining feasible industrial operating windows for waste cooking oil biodiesel via integrated reaction-separation simulations.</li>
-              <li>Optimizing single-stage methanol flash units for decentralized biodiesel production and reviewing thermal energy storage for energy systems.</li>
+              <li>Performed techno‑economic modeling of VIP vs. PU foam insulation for refrigerators, calculating cost‑benefit, energy savings (165 kWh/year), and payback (2–4 years for premium segments).</li>
+              <li>Quantified volumetric efficiency gains (30% interior volume increase) and identified key adoption barriers (cost premium, edge thermal bridging, vacuum decay).</li>
+              <li>Developed a life‑cycle assessment framework and circular economy roadmap for end‑of‑life core recovery.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Role 1 -->
-        <div class="timeline-item anim-target fade-up" style="animation-delay: 0.15s;">
+        <!-- 2. NCBS/ICTS Fellowship -->
+        <div class="timeline-item anim-target fade-up" style="animation-delay: 0.1s;">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <div class="timeline-role">Computational Research Project — Neural Avalanche Propagation (SOC)</div>
+                <div class="timeline-role">Computational Neuroscience Fellow</div>
                 <div class="timeline-company">NCBS &amp; ICTS · Mentors: Dr. Abhilasha Joshi &amp; Dr. Sarthak Chandra</div>
-                <div class="timeline-location">📍 Bangalore, India (till August 2025)</div>
+                <div class="timeline-location">📍 Bangalore, India</div>
               </div>
-              <span class="timeline-duration">2026 – Present</span>
+              <span class="timeline-duration">Jun – Aug 2026</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Developed a stochastic, sparse network model in MATLAB to simulate cortical avalanche propagation and self-organized criticality (SOC) in a 10×10 neural sheet.</li>
-              <li>Calibrated the network branching ratio near the critical threshold (λ = 0.95) via matrix eigenvalue scaling, ensuring a stable, non-divergent information cascade.</li>
-              <li>Processed large-scale simulation data (10⁵ avalanches) to extract cascade size/lifetime distributions, verifying alignment with theoretical power-law scaling.</li>
+              <li>Developed stochastic sparse network models in MATLAB to simulate neural avalanche propagation and self‑organized criticality over 2D and 3D neural sheets.</li>
+              <li>Calibrated branching ratio (λ = 0.95) via eigenvalue scaling and validated power‑law distributions (size ~ S⁻¹·⁵, duration ~ T⁻²) from >10⁵ independent cascades.</li>
+              <li>Extended binary neuron models to theta‑neuron spiking dynamics and built 3D visualizations for spatial cascade tracking.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Role 2 -->
+        <!-- 3. Process Synthesis & Full‑Scale Simulation -->
+        <div class="timeline-item anim-target fade-up" style="animation-delay: 0.2s;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Research Intern — Process Synthesis &amp; Full‑Scale Simulation</div>
+                <div class="timeline-company">ICT‑IOCB · Supervisor: Dr. Ritesh S. Malani</div>
+                <div class="timeline-location">📍 Bhubaneswar, India</div>
+              </div>
+              <span class="timeline-duration">Jan – May 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Designed and converged a full‑scale continuous biodiesel production plant in Aspen HYSYS, including pseudo‑component modeling, reaction rate optimization, and heat integration.</li>
+              <li>Conducted sensitivity analyses and optimized multi‑stage distillation columns for maximum separation efficiency.</li>
+              <li>Compiled kinetic/thermodynamic datasets and performed case studies to evaluate process robustness.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. Heterogeneous Biodiesel Engineering -->
         <div class="timeline-item anim-target fade-up" style="animation-delay: 0.3s;">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <div class="timeline-role">Research Intern — Biodiesel Process Simulation &amp; Optimization</div>
-                <div class="timeline-company">ICT-IOCB · Supervisor: Dr. Ritesh S. Malani</div>
+                <div class="timeline-role">Research Intern — Heterogeneous Biodiesel Engineering</div>
+                <div class="timeline-company">ICT‑IOCB · Supervisor: Dr. Ritesh S. Malani</div>
                 <div class="timeline-location">📍 Bhubaneswar, India</div>
               </div>
-              <span class="timeline-duration">Nov 2024 – May 2025</span>
+              <span class="timeline-duration">Nov 2024 – Jan 2025</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Designed and simulated a complete biodiesel production process in Aspen HYSYS, integrating reaction, separation, and purification sections.</li>
-              <li>Extracted and characterized non-edible Ashoka seed oil via sonication and Soxhlet extraction, assessing density, viscosity, and acid value of feedstock and product.</li>
-              <li>Built pseudo-component models and incorporated reaction kinetics for conversion prediction.</li>
-              <li>Conducted heat integration studies and optimized distillation column configurations to reduce process energy demand.</li>
-              <li>Performed sensitivity analyses across varying operating conditions to evaluate process efficiency.</li>
+              <li>Managed field collection and mechanical/thermal pretreatment of non‑edible Ashoka seeds, followed by oil extraction via sonication and Soxhlet.</li>
+              <li>Characterized oil properties (density, viscosity, acid value, saponification value) and synthesized biodiesel from high‑FFA waste cooking oil.</li>
+              <li>Conducted fuel property characterization and quality checks on final biodiesel products.</li>
             </ul>
           </div>
-        </div>         <!-- Add this after the Community Engineering Project card -->
+        </div>
 
-        <!-- Role 3 -->
-        <div class="timeline-item anim-target fade-up" style="animation-delay: 0.45s;">
+        <!-- 5. Separation & Analytical Laboratory -->
+        <div class="timeline-item anim-target fade-up" style="animation-delay: 0.4s;">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <div class="timeline-role">Research Intern — High-Pressure Systems &amp; Solvent Engineering</div>
-                <div class="timeline-company">ICT-IOCB · Supervisor: Dr. Ayantika Sett</div>
+                <div class="timeline-role">Research Intern — Separation &amp; Analytical Laboratory</div>
+                <div class="timeline-company">ICT‑IOCB · Supervisor: Dr. Ayantika Sett</div>
                 <div class="timeline-location">📍 Bhubaneswar, India</div>
               </div>
               <span class="timeline-duration">Jun – Jul 2024</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Trained in operation of high-pressure reactors and analytical instruments, including UV-Vis spectrophotometer and refractometer.</li>
-              <li>Conducted literature review and sample preparation for Deep Eutectic Solvents (DES).</li>
-              <li>Performed laboratory calibration, vacuum filtration, and MATLAB-based data visualization.</li>
+              <li>Mastered safety protocols and operation of high‑pressure reactors, UV‑Vis spectrophotometer, and vacuum filtration units.</li>
+              <li>Performed literature review and sample preparation for Deep Eutectic Solvents (DES).</li>
+              <li>Acquired MATLAB proficiency for advanced graph plotting and data visualization.</li>
             </ul>
           </div>
         </div>
@@ -2061,36 +2082,24 @@
         <div class="edu-degree">Integrated M.Tech in Chemical Engineering</div>
         <div class="edu-minor">Minor: Petrochemical Technology &amp; Refinery Engineering</div>
         <div class="edu-institution">
-          <span class="inst-icon">🏛️</span> Institute of Chemical Technology, Mumbai – Indian Oil Odisha Campus (ICT-IOCB)
+          <span class="inst-icon">🏛️</span> Institute of Chemical Technology, Mumbai – Indian Oil Odisha Campus (ICT‑IOCB)
         </div>
         <div class="edu-duration">2023 – 2028</div>
 
         <div class="edu-cgpa-highlight">
           <div class="cgpa-big">
-            <span class="cgpa-number" data-target="9.04">9.04</span>
+            <span class="cgpa-number" data-target="9.00">9.00</span>
             <span class="cgpa-of">/10</span>
           </div>
-          <span class="cgpa-label">Cumulative Grade Point Average (after 4 semesters)</span>
-          <div class="scholarship-badge">🏅 Merit-cum-Means Scholarship Recipient</div>
+          <span class="cgpa-label">Cumulative Grade Point Average (after Semester V)</span>
         </div>
 
         <div class="semester-row">
-          <div class="sem-card">
-            <span class="sem-label">Sem I</span>
-            <span class="sem-gpa">9.45</span>
-          </div>
-          <div class="sem-card">
-            <span class="sem-label">Sem II</span>
-            <span class="sem-gpa">9.30</span>
-          </div>
-          <div class="sem-card">
-            <span class="sem-label">Sem III</span>
-            <span class="sem-gpa">9.17</span>
-          </div>
-          <div class="sem-card">
-            <span class="sem-label">Sem IV</span>
-            <span class="sem-gpa">9.04</span>
-          </div>
+          <div class="sem-card"><span class="sem-label">Sem I</span><span class="sem-gpa">9.45</span></div>
+          <div class="sem-card"><span class="sem-label">Sem II</span><span class="sem-gpa">9.17</span></div>
+          <div class="sem-card"><span class="sem-label">Sem III</span><span class="sem-gpa">8.92</span></div>
+          <div class="sem-card"><span class="sem-label">Sem IV</span><span class="sem-gpa">8.67</span></div>
+          <div class="sem-card"><span class="sem-label">Sem V</span><span class="sem-gpa">8.86</span></div>
         </div>
 
         <div class="coursework-section">
@@ -2099,10 +2108,12 @@
             <span class="course-tag">Reaction Engineering</span>
             <span class="course-tag">Chemical Thermodynamics</span>
             <span class="course-tag">Heat Transfer</span>
+            <span class="course-tag">Fluid Flow</span>
             <span class="course-tag">Process Dynamics</span>
             <span class="course-tag">Process Safety</span>
             <span class="course-tag">Optimization Techniques</span>
-            <span class="course-tag">Process Simulation</span>
+            <span class="course-tag">Process Simulation Lab</span>
+            <span class="course-tag">Petroleum Refining</span>
           </div>
         </div>
       </div>
@@ -2118,59 +2129,60 @@
         </div>
         <h2 class="section-title anim-target fade-up">Research Publications</h2>
         <p class="section-subtitle anim-target fade-up">
-          One published paper and some manuscripts moving through preparation, centered on Aspen HYSYS process simulation for sustainable biodiesel production.
+          Peer‑reviewed articles, preprints, and manuscripts under review – all focused on process simulation and sustainable energy.
         </p>
       </div>
 
       <div class="pub-grid">
+        <!-- Manuscript II – Published -->
         <div class="pub-card anim-target fade-up">
           <span class="pub-status published">Published</span>
-          <h3 class="pub-title">Steady-State Simulation and Energy Analysis of a Two-Stage Heterogeneous Catalytic Process for Biodiesel Production from High-FFA Waste Cooking Oil Using Aspen HYSYS</h3>
+          <h3 class="pub-title">Steady‑state simulation and energy analysis of a two‑stage heterogeneous catalytic process for biodiesel production from high‑FFA waste cooking oil using Aspen HYSYS</h3>
           <p class="pub-journal">Journal of Engineering and Applied Science · 73, Article 235 · 2026</p>
           <p class="pub-authors">Bhurse, T. &amp; Sett, A.</p>
-          <p class="pub-finding"><strong>Key result:</strong> A two-stage SHER (acid esterification) + waste-mussel-shell CaO (base transesterification) system achieved 98.7% FFA conversion and 99.9% triglyceride conversion, with heat integration cutting specific energy use from 3.08 to as low as 1.66 MJ/kg.</p>
+          <p class="pub-finding"><strong>Key result:</strong> A two‑stage SHER acid esterification + waste‑mussel‑shell CaO transesterification achieved 98.7% FFA and 99.9% triglyceride conversion; heat integration cut specific energy from 3.08 to 1.66 MJ/kg.</p>
           <a class="pub-doi" href="https://doi.org/10.1186/s44147-026-01090-8" target="_blank" rel="noopener">🔗 DOI: 10.1186/s44147-026-01090-8</a>
         </div>
 
+        <!-- Manuscript III – Preprint -->
         <div class="pub-card anim-target fade-up" style="animation-delay: 0.1s;">
           <span class="pub-status preprint">Preprint</span>
           <h3 class="pub-title">Simulation of Biodiesel from Waste Cooking Oil (WCO) in Aspen HYSYS and Its Optimization Study</h3>
-          <p class="pub-journal">ChemRxiv · Posted 15 Oct 2025 · Internationally Indexed</p>
+          <p class="pub-journal">ChemRxiv · Posted 15 Oct 2025</p>
           <p class="pub-authors">Bhurse, T. G.</p>
-          <p class="pub-finding"><strong>Key result:</strong> A continuous two-stage CSTR system (65 °C, 6:1 methanol-to-oil ratio, 2 wt% KOH) reached ~99% triglyceride conversion, &gt;99% product purity, and ~98% methanol recovery via distillation.</p>
+          <p class="pub-finding"><strong>Key result:</strong> A continuous two‑stage CSTR system (65 °C, 6:1 methanol‑to‑oil, 2 wt% KOH) reached ~99% triglyceride conversion, >99% product purity, and ~98% methanol recovery.</p>
+          <a class="pub-doi" href="https://chemrxiv.org/..." target="_blank" rel="noopener">🔗 ChemRxiv</a>
         </div>
 
-        <div class="pub-card anim-target fade-up" style="animation-delay: 0.2s;">
-          <span class="pub-status revision">In Revision (with Faculty)</span>
-          <h3 class="pub-title">Defining a Feasible Industrial Operating Window for Waste Cooking Oil Biodiesel via Integrated Reaction–Separation Simulation</h3>
-          <p class="pub-journal">Co-author: Dr. Ayantika Sett</p>
-          <p class="pub-authors">Bhurse, T. &amp; Sett, A.</p>
-          <p class="pub-finding"><strong>Key result:</strong> ~96% FFA/triglyceride conversion within a Feasible Industrial Operating Window (FIOW) of 60–63 °C and 6.5–7.5:1 methanol-to-oil ratio; a Damköhler number of 3.77 confirms kinetically dominant operation.</p>
-        </div>
-
+       <!-- Manuscript IV – Under Review -->
         <div class="pub-card anim-target fade-up" style="animation-delay: 0.3s;">
-          <span class="pub-status revision">Revision</span>
-          <h3 class="pub-title">Solar-Thermal Intensification of Biodiesel Methanol Recovery: High-Resolution Thermodynamic Mapping and CSP Sizing for a Low-Carbon Circular Bioeconomy</h3>
-          <p class="pub-journal">Bioresource Technology Reports · Manuscript No. BITEB-D-26-01036</p>
-          <p class="pub-authors">Bhurse, T.</p>
-          <p class="pub-finding"><strong>Key result:</strong> A global energetic optimum of 2292 kJ/kg at 89 °C; at the recommended 105 °C operating point, 80.5% methanol recovery at &gt;99.89 wt% purity, ~136 m² CSP collector sizing, and a 2.45-year payback.</p>
-        </div>
-
-        <div class="pub-card anim-target fade-up" style="animation-delay: 0.4s;">
-          <span class="pub-status preparation">In Preparation</span>
-          <h3 class="pub-title">Purity-Constrained Operating Cost Minimum for a Single-Stage Methanol Flash Unit in Decentralized Biodiesel Production</h3>
-          <p class="pub-journal">Co-author: Dr. Sushma Chakraborty</p>
+          <span class="pub-status review">Under Review</span>
+          <h3 class="pub-title">Purity‑Constrained Operating Cost Minimum for a Single‑Stage Methanol Flash Unit in Decentralized Biodiesel Production</h3>
+          <p class="pub-journal">Manuscript in Review</p>
           <p class="pub-authors">Bhurse, T. &amp; Chakraborty, S.</p>
-          <p class="pub-finding"><strong>Key result:</strong> A 130–136 °C safe operating window for a 1 TPD plant delivers &gt;90% solvent recovery and &gt;99 wt% purity, keeping annualized costs within 2% of the mathematical minimum (~2,230 USD/yr).</p>
+          <p class="pub-finding"><strong>Key result:</strong> 130–136 °C operating window for a 1 TPD plant delivers >90% solvent recovery and >99 wt% purity, annualized cost within 2% of optimum (~2,230 USD/yr).</p>
+
+        
+        </div>
+        <!-- Manuscript V – Internal Review -->
+        <div class="pub-card anim-target fade-up" style="animation-delay: 0.4s;">
+          <span class="pub-status review">Internal Review</span>
+          <h3 class="pub-title">Defining a Feasible Industrial Operating Window for Waste Cooking Oil Biodiesel via Integrated Reaction–Separation Simulation</h3>
+          <p class="pub-journal">Faculty Review</p>
+          <p class="pub-authors">Bhurse, T. &amp; Sett, A.</p>
+          <p class="pub-finding"><strong>Key result:</strong> ~96% FFA/triglyceride conversion within FIOW of 60–63 °C and 6.5–7.5:1 MTO ratio; Damköhler number 3.77 confirms kinetically dominant operation.</p>
         </div>
 
+        <!-- Manuscript VI – Internal Review -->
         <div class="pub-card anim-target fade-up" style="animation-delay: 0.5s;">
-          <span class="pub-status preparation">In Preparation · Review</span>
+          <span class="pub-status review">Internal Review</span>
           <h3 class="pub-title">Thermal Energy Storage for Energy Systems: A Short Review of Performance Limitations and Research Gaps</h3>
-          <p class="pub-journal">Co-author: Dr. Ayantika Sett</p>
+          <p class="pub-journal">Faculty Review</p>
           <p class="pub-authors">Sett, A. &amp; Bhurse, T.</p>
-          <p class="pub-finding"><strong>Key result:</strong> Reviews sensible, latent, and thermochemical storage limitations, highlighting the gap between India's &gt;750 GW solar potential and ~101 MW of installed CSP–TES capacity.</p>
+          <p class="pub-finding"><strong>Key result:</strong> Reviews SHTES, LHTES, and TCES limitations; highlights gap between India's >750 GW solar potential and ~101 MW installed CSP–TES capacity.</p>
         </div>
+
+        
       </div>
     </div>
   </section>
@@ -2184,22 +2196,40 @@
         </div>
         <h2 class="section-title anim-target fade-up">Featured Projects</h2>
         <p class="section-subtitle anim-target fade-up">
-          Hands-on engineering and feasibility work — distinct from the research and publications above.
+          Hands‑on engineering and feasibility work – distinct from the research publications above.
         </p>
       </div>
 
-     
+      <div class="projects-grid">
+        <div class="project-card anim-target fade-up">
+          <div class="project-header">
+            <span class="project-type engineering">Engineering</span>
+            <span class="project-dur">2024 – 2025</span>
+          </div>
+          <h3 class="project-title">Aluminum–Air Battery System — Chem‑E‑Car Competition</h3>
+          <p class="project-desc">As Research Lead of Team Aluminator (AIChE ICT‑IOCB), designed and optimized an aluminum‑air battery with a custom DES‑based electrolyte formulation.</p>
+          <div class="project-outcomes">
+            <div class="outcome-item">Stable electrochemical performance: 1.5–1.6 V, >200 mA output</div>
+            <div class="outcome-item">Delivered 3 kg payload over 21 m in 1.45 minutes</div>
+            <div class="outcome-item">1st Prize at NAIMISHYA AIChE India SRC 2025 – selected for AIChE Student Conference (MIT, USA)</div>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Electrochemistry</span>
+            <span class="tech-tag">DES Electrolyte</span>
+            <span class="tech-tag">Reaction Engineering</span>
+          </div>
+        </div>
 
         <div class="project-card anim-target fade-up" style="animation-delay: 0.1s;">
           <div class="project-header">
             <span class="project-type feasibility">Feasibility</span>
             <span class="project-dur">2025</span>
           </div>
-          <h3 class="project-title">Solar-Thermal (CSP) Energy Systems for Mining Applications</h3>
-          <p class="project-desc">Built for the Smart India Hackathon (SIH), this study evaluated CSP-based thermal energy systems as a sustainable power option for energy-intensive mining operations through solar-thermal energy analysis and process-level simulation.</p>
+          <h3 class="project-title">Solar‑Thermal (CSP) Energy Systems for Mining Applications</h3>
+          <p class="project-desc">Evaluated CSP‑based thermal energy systems as a sustainable power option for energy‑intensive mining operations through solar‑thermal analysis and process‑level simulation.</p>
           <div class="project-outcomes">
             <div class="outcome-item">Feasibility study assessing power generation potential for mining operations</div>
-            <div class="outcome-item">Proposed hybrid energy utilization strategies for energy-intensive sites</div>
+            <div class="outcome-item">Proposed hybrid energy utilization strategies for off‑grid sites</div>
           </div>
           <div class="project-tech">
             <span class="tech-tag">CSP</span>
@@ -2214,63 +2244,20 @@
             <span class="project-dur">May 2025</span>
           </div>
           <h3 class="project-title">Community Engineering Project — Unmukt Foundation</h3>
-          <p class="project-desc">A 60-hour community engagement focused on mentoring children across five local communities in Bhubaneswar, helping them to dream big through education and science.</p>
+          <p class="project-desc">60‑hour community engagement mentoring children across five local communities in Bhubaneswar, integrating practical engineering solutions.</p>
           <div class="project-outcomes">
-            <div class="outcome-item">Served as a mentor to over 100 children, fostering their curiosity and helping them dream big by integrating practical scientific demonstrations into their learning environment.</div>
-            <div class="outcome-item">Actively guided children through hands-on learning, showing how early exposure to science can spark long-term academic interest.</div>
-            <div class="outcome-item">Participated in field programs promoting ecological awareness and teaching students the value of sustainable practices.</div>
+            <div class="outcome-item">Engineered low‑cost citric‑acid water‑softening tablets (~₹2.60/10g) and mechanical water‑stopper sensors.</div>
+            <div class="outcome-item">Drafted solar‑powered air filter schematics using activated charcoal.</div>
+            <div class="outcome-item">Mentored >100 children through scientific demonstrations and eco‑literacy campaigns.</div>
           </div>
           <div class="project-tech">
             <span class="tech-tag">Mentorship</span>
             <span class="tech-tag">STEM Education</span>
-            <span class="tech-tag">Community Impact</span>
+            <span class="tech-tag">Water Treatment</span>
           </div>
         </div>
       </div>
     </div>
-   <!-- Add this after the Community Engineering Project card -->
-<div class="project-card anim-target fade-up" style="animation-delay: 0.3s;">
-  <div class="project-header">
-    <span class="project-type research">Research</span>
-    <span class="project-dur">Nov 2024 – Jan 2025</span>
-  </div>
-  <h3 class="project-title">Biodiesel Production from Non-Edible Ashoka Seeds</h3>
-  <p class="project-desc">Investigated the feasibility of producing biodiesel from non-edible Ashoka seed oil. Performed oil extraction using sonication and Soxhlet techniques, achieving ~78% extraction efficiency. Conducted comprehensive physicochemical characterization (density, viscosity, acid value, saponification value) of feedstock and synthesized biodiesel.</p>
-  <div class="project-outcomes">
-    <div class="outcome-item">Achieved ~78% oil extraction efficiency using sonication and Soxhlet methods</div>
-    <div class="outcome-item">Conducted physicochemical characterization (density, viscosity, acid value, saponification value)</div>
-    <div class="outcome-item">Synthesized biodiesel and evaluated fuel quality against ASTM D6751</div>
-  </div>
-  <div class="project-tech">
-    <span class="tech-tag">Sonication</span>
-    <span class="tech-tag">Soxhlet Extraction</span>
-    <span class="tech-tag">Transesterification</span>
-    <span class="tech-tag">Physicochemical Analysis</span>
-  </div>
-</div>
-
-    <!-- REPLACE EXISTING Al-Air BATTERY CARD WITH THIS -->
-<div class="project-card anim-target fade-up">
-  <div class="project-header">
-    <span class="project-type engineering">Engineering</span>
-    <span class="project-dur">2024 – Present</span>
-  </div>
-  <h3 class="project-title">Aluminum–Air Battery System — Chem-E-Car Competition</h3>
-  <p class="project-desc">As Research Lead of Team Aluminator (AIChE ICT-IOCB), designed and optimized an aluminum-air battery system from concept through full implementation, with a custom Deep-Eutectic-Solvent-based electrolyte formulation. Currently improving the system with enhanced electrode design and electrolyte optimization, while exploring Zn-Cu and Al-Cu battery configurations for improved power density and cost-effectiveness.</p>
-  <div class="project-outcomes">
-    <div class="outcome-item"><strong>2024-2025:</strong> Achieved 1.5–1.6 V operating potential, &gt;200 mA output current</div>
-    <div class="outcome-item">Delivered a 3 kg payload over 21 m in 1.45 minutes — 1st Prize, NAIMISHYA AIChE SRC 2025</div>
-    <div class="outcome-item">Selected for AIChE Student Conference (ASC), MIT, USA</div>
-    <div class="outcome-item"><strong>2025-Present:</strong> Improving Al-Air performance; exploring Zn-Cu &amp; Al-Cu configurations</div>
-  </div>
-  <div class="project-tech">
-    <span class="tech-tag">Al-Air Battery</span>
-    <span class="tech-tag">Zn-Cu Battery</span>
-    <span class="tech-tag">Al-Cu Battery</span>
-    <span class="tech-tag">DES Electrolyte</span>
-    <span class="tech-tag">Electrochemistry</span>
-  </div>
-</div>
   </section>
 
   <!-- ===== Section 7: Skills ===== -->
@@ -2314,7 +2301,7 @@
           <div class="progress-track"><div class="progress-fill" data-width="88"></div></div>
           <ul class="skill-list">
             <li>NRTL &amp; UNIQUAC modeling</li>
-            <li>Rate kinetics</li>
+            <li>Rate kinetics &amp; reactor design</li>
             <li>VLE &amp; LLE characterization</li>
           </ul>
         </div>
@@ -2323,15 +2310,15 @@
           <div class="skill-header">
             <span class="skill-icon">💻</span>
             <div>
-              <div class="skill-name">Programming &amp; Computational Tools</div>
+              <div class="skill-name">Programming &amp; Computation</div>
               <div class="skill-pct" data-target="85">0%</div>
             </div>
           </div>
           <div class="progress-track"><div class="progress-fill" data-width="85"></div></div>
           <ul class="skill-list">
             <li>MATLAB, Simulink &amp; Stateflow</li>
-            <li>Python</li>
-            <li>MS Excel</li>
+            <li>Python (basic)</li>
+            <li>Scientific computing &amp; data visualization</li>
           </ul>
         </div>
 
@@ -2345,9 +2332,9 @@
           </div>
           <div class="progress-track"><div class="progress-fill" data-width="80"></div></div>
           <ul class="skill-list">
-            <li>UV-Vis spectroscopy</li>
+            <li>UV‑Vis spectroscopy</li>
             <li>Soxhlet &amp; sonication extraction</li>
-            <li>High-pressure reactor operation &amp; refractometer calibration</li>
+            <li>High‑pressure reactor operation &amp; refractometry</li>
           </ul>
         </div>
 
@@ -2361,534 +2348,548 @@
           </div>
           <div class="progress-track"><div class="progress-fill" data-width="78"></div></div>
           <ul class="skill-list">
-            <li>Risk-Based Process Safety (RBPS) frameworks</li>
-            <li>Hazard identification</li>
-            <li>AIChE CCPS-certified</li>
+            <li>Risk‑Based Process Safety (RBPS) frameworks</li>
+            <li>Hazard identification &amp; risk assessment</li>
+            <li>AIChE CCPS‑certified</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Section 8: Scholarships & Certifications ===== -->
-  <section class="section" id="certifications">
-    <div class="section-inner">
-      <div class="section-head">
-        <div class="section-chip anim-target fade-up">
-          <span class="chip-dot"></span> Certifications
-        </div>
-        <h2 class="section-title anim-target fade-up">Scholarships &amp; Certifications</h2>
-        <p class="section-subtitle anim-target fade-up">
-          Formal training and recognitions earned alongside coursework and research.
-        </p>
+  <!-- ===== Section 8: Certifications ===== -->
+<section class="section" id="certifications">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-chip anim-target fade-up">
+        <span class="chip-dot"></span> Certifications
+      </div>
+      <h2 class="section-title anim-target fade-up">Professional Certifications</h2>
+      <p class="section-subtitle anim-target fade-up">
+        Formal training and recognitions earned alongside coursework and research.
+      </p>
+    </div>
+
+    <div class="cert-grid">
+      <!-- Risk-Based Process Safety -->
+      <div class="cert-card anim-target spring-in">
+        <div class="cert-provider">AIChE CCPS</div>
+        <h3 class="cert-title">Risk‑Based Process Safety Decision Making for All Engineers</h3>
+        <p class="cert-detail">6 PDH · 0.60 CEU · Awarded 01/09/2026</p>
+        <a href="./certificates_folder/rbps_certificate.pdf" target="_blank" class="cert-link">📄 View Certificate</a>
       </div>
 
-      <div class="cert-grid">
-        <div class="cert-card anim-target spring-in">
-          <div class="cert-provider">AIChE CCPS</div>
-          <h3 class="cert-title">Risk-Based Process Safety Decision Making for All Engineers</h3>
-          <p class="cert-detail">6 PDH · 0.60 CEU</p>
+      <!-- MATLAB Onramp -->
+      <div class="cert-card anim-target spring-in" style="animation-delay: 0.1s;">
+        <div class="cert-provider">MathWorks</div>
+        <h3 class="cert-title">MATLAB Onramp</h3>
+        <p class="cert-detail">Completed 17 December 2025</p>
+        <a href="./certificates_folder/matlab_onramp.pdf" target="_blank" class="cert-link">📄 View Certificate</a>
+      </div>
+
+      <!-- Simulink Onramp -->
+      <div class="cert-card anim-target spring-in" style="animation-delay: 0.2s;">
+        <div class="cert-provider">MathWorks</div>
+        <h3 class="cert-title">Simulink Onramp</h3>
+        <p class="cert-detail">Completed 3 December 2025</p>
+        <a href="./certificates_folder/simulink_onramp.pdf" target="_blank" class="cert-link">📄 View Certificate</a>
+      </div>
+
+      <!-- Stateflow Onramp -->
+      <div class="cert-card anim-target spring-in" style="animation-delay: 0.3s;">
+        <div class="cert-provider">MathWorks</div>
+        <h3 class="cert-title">Stateflow Onramp</h3>
+        <p class="cert-detail">Completed 13 December 2025</p>
+        <a href="./certificates_folder/stateflow_onramp.pdf" target="_blank" class="cert-link">📄 View Certificate</a>
+      </div>
+
+      <!-- Unmukt Foundation Community Engineering Intern -->
+      <div class="cert-card anim-target spring-in" style="animation-delay: 0.4s;">
+        <div class="cert-provider">Unmukt Foundation</div>
+        <h3 class="cert-title">Community Engineering Intern & Volunteer</h3>
+        <p class="cert-detail">May 2025 · 60+ hours</p>
+        <a href="./certificates_folder/unmukt_foundation_certificate.pdf" target="_blank" class="cert-link">📄 View Certificate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== Section 9: Achievements ===== -->
+  <section id="achievements" class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip"><span class="chip-dot"></span>Achievements</div>
+        <h2 class="section-title">Achievements &amp; Recognition</h2>
+        <p class="section-subtitle">Recognized for excellence in research, engineering design, and academic performance</p>
+      </div>
+      <div class="ach-stats-row" id="ach-stats-row">
+        <div class="ach-stat"><span class="ach-stat-num" data-target="5">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Research Internships</span></div>
+        <div class="ach-stat"><span class="ach-stat-num" data-target="3">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Publications (incl. under review)</span></div>
+        <div class="ach-stat"><span class="ach-stat-num" data-target="12">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Awards &amp; Honors</span></div>
+        <div class="ach-stat"><span class="ach-stat-num" data-target="4">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Certifications</span></div>
+      </div>
+      <div class="ach-filter">
+        <button class="ach-filter-pill active" data-filter="all">All</button>
+        <button class="ach-filter-pill" data-filter="Professional">⚙ Professional</button>
+        <button class="ach-filter-pill" data-filter="Academic">🎓 Academic</button>
+        <button class="ach-filter-pill" data-filter="Leadership">👑 Leadership</button>
+      </div>
+      <div class="ach-grid" id="ach-grid">
+        <!-- These are the same achievement cards from the original, but we've updated the text slightly to match the data -->
+        <!-- We'll keep the same images and structure, but ensure the content matches the Excel data -->
+        <div class="ach-card anim-target spring-in" data-category="Professional">
+          <div class="ach-img-wrap">
+            <img class="ach-img ken-burns" src="achievements_folder/chem_e_car_1st.jpeg" alt="1st Prize — Chem-E-Car Performance Run" loading="lazy">
+            <div class="ach-badges">
+              <span class="ach-cat-badge professional">⚙ Professional</span>
+              <span class="ach-year">2025</span>
+            </div>
+          </div>
+          <div class="ach-body">
+            <h3 class="ach-title">1st Prize — Chem-E-Car Performance Run</h3>
+            <p class="ach-inst">🏛️ NAIMISHYA, AIChE India SRC 2025</p>
+            <p class="ach-desc">Led Team Aluminator to 1st position, delivering a 3 kg payload over 21 m in 1.45 minutes. Selected for AIChE Student Conference (ASC), MIT, USA.</p>
+          </div>
         </div>
-        <div class="cert-card anim-target spring-in" style="animation-delay: 0.1s;">
-          <div class="cert-provider">MathWorks</div>
-          <h3 class="cert-title">MATLAB Onramp</h3>
-          <p class="cert-detail">Completion Certificate</p>
+        <div class="ach-card anim-target spring-in" data-category="Academic">
+          <div class="ach-img-wrap">
+            <img class="ach-img ken-burns" src="achievements_folder/chem_e_jeopardy_1st.jpeg" alt="Runners-up — Quiziofyte 3.0 (Chem-E-Jeopardy)" loading="lazy">
+            <div class="ach-badges">
+              <span class="ach-cat-badge academic">🎓 Academic</span>
+              <span class="ach-year">2025</span>
+            </div>
+          </div>
+          <div class="ach-body">
+            <h3 class="ach-title">Runners-up — Quiziofyte 3.0 (Chem-E-Jeopardy)</h3>
+            <p class="ach-inst">🏛️ AIChE ICT‑IOCB Student Chapter</p>
+            <p class="ach-desc">Secured Runners‑up position in Chem‑E‑Jeopardy event.</p>
+          </div>
         </div>
-        <div class="cert-card anim-target spring-in" style="animation-delay: 0.2s;">
-          <div class="cert-provider">MathWorks</div>
-          <h3 class="cert-title">Simulink Onramp</h3>
-          <p class="cert-detail">Completion Certificate</p>
+        <div class="ach-card anim-target spring-in" data-category="Academic">
+          <div class="ach-img-wrap">
+            <img class="ach-img ken-burns" src="achievements_folder/mun_2st.jpeg" alt="Runners-up — CONSENSUS (Model United Nations)" loading="lazy">
+            <div class="ach-badges">
+              <span class="ach-cat-badge academic">🎓 Academic</span>
+              <span class="ach-year">2025</span>
+            </div>
+          </div>
+          <div class="ach-body">
+            <h3 class="ach-title">Runners‑up — CONSENSUS (Model United Nations)</h3>
+            <p class="ach-inst">🏛️ AIChE ICT‑IOCB Student Chapter</p>
+            <p class="ach-desc">Secured Runners‑up position in Model United Nations event.</p>
+          </div>
         </div>
-        <div class="cert-card anim-target spring-in" style="animation-delay: 0.3s;">
-          <div class="cert-provider">MathWorks</div>
-          <h3 class="cert-title">Stateflow Onramp</h3>
-          <p class="cert-detail">Completion Certificate</p>
+        <div class="ach-card anim-target spring-in" data-category="Academic">
+          <div class="ach-img-wrap">
+            <img class="ach-img ken-burns" src="achievements_folder/quiziofyte_3rd.jpeg" alt="3rd Position — Quiziofyte" loading="lazy">
+            <div class="ach-badges">
+              <span class="ach-cat-badge academic">🎓 Academic</span>
+              <span class="ach-year">2023</span>
+            </div>
+          </div>
+          <div class="ach-body">
+            <h3 class="ach-title">3rd Position — Quiziofyte</h3>
+            <p class="ach-inst">🏛️ SWANIRVAHAN, ICT‑IOCB</p>
+            <p class="ach-desc">Secured 3rd position in flagship event organized by ICT‑IOCB Student Chapter.</p>
+          </div>
+        </div>
+        <div class="ach-card anim-target spring-in" data-category="Professional">
+          <div class="ach-img-wrap">
+            <img class="ach-img ken-burns" src="achievements_folder/indiaskills_certificate.jpeg" alt="Certificate of Appreciation — IndiaSkills 2025-26" loading="lazy">
+            <div class="ach-badges">
+              <span class="ach-cat-badge professional">⚙ Professional</span>
+              <span class="ach-year">2026</span>
+            </div>
+          </div>
+          <div class="ach-body">
+            <h3 class="ach-title">Certificate of Appreciation — IndiaSkills 2025‑26</h3>
+            <p class="ach-inst">🏛️ IndiaSkills (Skill India, NCVET, NSDC, LSSSDC)</p>
+            <p class="ach-desc">Recognized for outstanding contribution in Chemical Laboratory Technology Skill Competition.</p>
+          </div>
+        </div>
+        <div class="ach-card anim-target spring-in" data-category="Academic">
+          <div class="ach-img-wrap">
+            <img class="ach-img ken-burns" src="achievements_folder/INT_CONFERENCE.jpeg" alt="Participant — ICFMPT-2024" loading="lazy">
+            <div class="ach-badges">
+              <span class="ach-cat-badge academic">🎓 Academic</span>
+              <span class="ach-year">2024</span>
+            </div>
+          </div>
+          <div class="ach-body">
+            <h3 class="ach-title">Participant — ICFMPT‑2024</h3>
+            <p class="ach-inst">🏛️ International Conference on Functional Materials and Polymer Technology</p>
+            <p class="ach-desc">Participated in the International Conference on Functional Materials and Polymer Technology.</p>
+          </div>
+        </div>
+        <div class="ach-card anim-target spring-in" data-category="Leadership">
+          <div class="ach-img-wrap">
+            <img class="ach-img ken-burns" src="achievements_folder/K12_Cordinator.jpeg" alt="K-12 STEM Outreach Coordinator" loading="lazy">
+            <div class="ach-badges">
+              <span class="ach-cat-badge leadership">👑 Leadership</span>
+              <span class="ach-year">2024‑25</span>
+            </div>
+          </div>
+          <div class="ach-body">
+            <h3 class="ach-title">K‑12 STEM Outreach Coordinator</h3>
+            <p class="ach-inst">🏛️ AIChE ICT‑IOCB Chapter</p>
+            <p class="ach-desc">Served as K‑12 Coordinator for the American Institute of Chemical Engineers (AIChE) ICT‑IOCB Chapter.</p>
+          </div>
+        </div>
+       
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== Section 10: Leadership ===== -->
+  <section id="leadership" class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip"><span class="chip-dot"></span>Leadership</div>
+        <h2 class="section-title">Leadership &amp; Extracurricular</h2>
+        <p class="section-subtitle">Taking initiative and building community impact</p>
+      </div>
+      <div class="leadership-grid">
+        <div class="lead-card anim-target fade-up"><span class="lead-icon">🏎️</span><h3 class="lead-role">Chem‑E‑Car Coordinator</h3><p class="lead-org">AIChE ICT‑IOCB Student Chapter</p><span class="lead-dur">2025–26</span></div>
+        <div class="lead-card anim-target fade-up"><span class="lead-icon">🔬</span><h3 class="lead-role">Research Lead Team Aluminator</h3><p class="lead-org">AIChE ICT‑IOCB Student Chapter</p><span class="lead-dur">2024–25</span></div>
+        <div class="lead-card anim-target fade-up"><span class="lead-icon">👨‍🏫</span><h3 class="lead-role">K‑12 STEM Outreach Coordinator</h3><p class="lead-org">AIChE ICT‑IOCB Student Chapter</p><span class="lead-dur">2024–25</span></div>
+        <div class="lead-card anim-target fade-up"><span class="lead-icon">🏢</span><h3 class="lead-role">Hostel &amp; Mess Committee Member</h3><p class="lead-org">ICT‑IOCB</p><span class="lead-dur">2023–25</span></div>
+      </div>
+    </div>
+  </section>
 
-<!-- SECTION 9 -->
-<section id="achievements" class="section">
-  <div class="section-inner">
-    <div class="section-head">
-      <div class="section-chip"><span class="chip-dot"></span>Achievements</div>
-      <h2 class="section-title">Achievements &amp; Recognition</h2>
-      <p class="section-subtitle">Recognized for excellence in research, engineering design, and academic performance</p>
-    </div>
-    <div class="ach-stats-row" id="ach-stats-row">
-      <div class="ach-stat"><span class="ach-stat-num" data-target="2">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Years Research Experience</span></div>
-      <div class="ach-stat"><span class="ach-stat-num" data-target="4">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Certifications</span></div>
-      <div class="ach-stat"><span class="ach-stat-num" data-target="12">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Research Outputs</span></div>
-      <div class="ach-stat"><span class="ach-stat-num" data-target="9">0</span><span class="ach-stat-suffix">+</span><span class="ach-stat-label">Awards</span></div>
-    </div>
-    <div class="ach-filter">
-      <button class="ach-filter-pill active" data-filter="all">All</button>
-      <button class="ach-filter-pill" data-filter="Professional">⚙ Professional</button>
-      <button class="ach-filter-pill" data-filter="Academic">🎓 Academic</button>
-      <button class="ach-filter-pill" data-filter="Leadership">👑 Leadership</button>
-    </div>
-    <div class="ach-grid" id="ach-grid">
-      <div class="ach-card anim-target spring-in" data-category="Professional">
-        <div class="ach-img-wrap">
-          <img class="ach-img ken-burns" src="achievements_folder/chem_e_car_1st.jpeg" alt="1st Prize — Chem-E-Car Performance Run" loading="lazy">
-          <div class="ach-badges">
-            <span class="ach-cat-badge professional">⚙ Professional</span>
-            <span class="ach-year">2025</span>
-          </div>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">1st Prize — Chem-E-Car Performance Run</h3>
-          <p class="ach-inst">🏛️ NAIMISHYA, AIChE India SRC 2025</p>
-          <p class="ach-desc">Led Team Aluminator to 1st position, delivering a 3 kg payload over 21 m in 1.45 minutes. Selected for AIChE Student Conference (ASC), MIT, USA.</p>
-        </div>
+  <!-- ===== Section 11: Contact ===== -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-chip"><span class="chip-dot"></span>Contact</div>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Reach out for collaborations, research opportunities, or just to connect</p>
       </div>
-      <div class="ach-card anim-target spring-in" data-category="Academic">
-        <div class="ach-img-wrap">
-          <img class="ach-img ken-burns" src="achievements_folder/chem_e_jeopardy_1st.jpeg" alt="Runners-up — Quiziofyte 3.0 (Chem-E-Jeopardy)" loading="lazy">
-          <div class="ach-badges">
-            <span class="ach-cat-badge academic">🎓 Academic</span>
-            <span class="ach-year">2025</span>
-          </div>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">Runners-up — Quiziofyte 3.0 (Chem-E-Jeopardy)</h3>
-          <p class="ach-inst">🏛️ AIChE ICT-IOC Student Chapter</p>
-          <p class="ach-desc">Secured Runners-up position in Chem-E-Jeopardy event.</p>
-        </div>
-      </div>
-      <div class="ach-card anim-target spring-in" data-category="Academic">
-        <div class="ach-img-wrap">
-          <img class="ach-img ken-burns" src="achievements_folder/mun_2st.jpeg" alt="Runners-up — CONSENSUS (Model United Nations)" loading="lazy">
-          <div class="ach-badges">
-            <span class="ach-cat-badge academic">🎓 Academic</span>
-            <span class="ach-year">2025</span>
-          </div>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">Runners-up — CONSENSUS (Model United Nations)</h3>
-          <p class="ach-inst">🏛️ AIChE ICT-IOC Student Chapter</p>
-          <p class="ach-desc">Secured Runners-up position in Model United Nations event.</p>
-        </div>
-      </div>
-      <div class="ach-card anim-target spring-in" data-category="Academic">
-        <div class="ach-img-wrap">
-          <img class="ach-img ken-burns" src="achievements_folder/quiziofyte_3rd.jpeg" alt="3rd Position — Quiziofyte" loading="lazy">
-          <div class="ach-badges">
-            <span class="ach-cat-badge academic">🎓 Academic</span>
-            <span class="ach-year">2023</span>
-          </div>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">3rd Position — Quiziofyte</h3>
-          <p class="ach-inst">🏛️ SWANIRVAHAN, ICT-IOCB</p>
-          <p class="ach-desc">Secured 3rd position in flagship event organized by ICT-IOCB Student Chapter.</p>
-        </div>
-      </div>
-      <div class="ach-card anim-target spring-in" data-category="Professional">
-        <div class="ach-img-wrap">
-          <img class="ach-img ken-burns" src="achievements_folder/indiaskills_certificate.jpeg" alt="Certificate of Appreciation — IndiaSkills 2025-26" loading="lazy">
-          <div class="ach-badges">
-            <span class="ach-cat-badge professional">⚙ Professional</span>
-            <span class="ach-year">2026</span>
-          </div>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">Certificate of Appreciation — IndiaSkills 2025-26</h3>
-          <p class="ach-inst">🏛️ IndiaSkills (Skill India, NCVET, NSDC, LSSSDC)</p>
-          <p class="ach-desc">Recognized for outstanding contribution in Chemical Laboratory Technology Skill Competition.</p>
-        </div>
-      </div>
-      <div class="ach-card anim-target spring-in" data-category="Academic">
-        <div class="ach-img-wrap">
-          <img class="ach-img ken-burns" src="achievements_folder/INT_CONFERENCE.jpeg" alt="Participant — ICFMPT-2024" loading="lazy">
-          <div class="ach-badges">
-            <span class="ach-cat-badge academic">🎓 Academic</span>
-            <span class="ach-year">2024</span>
-          </div>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">Participant — ICFMPT-2024</h3>
-          <p class="ach-inst">🏛️ International Conference on Functional Materials and Polymer Technology</p>
-          <p class="ach-desc">Participated in the International Conference on Functional Materials and Polymer Technology.</p>
-        </div>
-      </div>
-      <div class="ach-card anim-target spring-in" data-category="Leadership">
-        <div class="ach-img-wrap">
-          <img class="ach-img ken-burns" src="achievements_folder/K12_Cordinator.jpeg" alt="K-12 STEM Outreach Coordinator" loading="lazy">
-          <div class="ach-badges">
-            <span class="ach-cat-badge leadership">👑 Leadership</span>
-            <span class="ach-year">2024-25</span>
-          </div>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">K-12 STEM Outreach Coordinator</h3>
-          <p class="ach-inst">🏛️ AIChE ICT-IOCB Chapter</p>
-          <p class="ach-desc">Served as K-12 Coordinator for the American Institute of Chemical Engineers (AIChE) ICT-IOCB Chapter.</p>
-        </div>
-      </div>
-      <div class="ach-card anim-target spring-in" data-category="Academic">
-        <div class="ach-body" style="padding-top: 22px;">
-          <div style="display:flex; gap:8px; margin-bottom:12px;">
-            <span class="ach-cat-badge academic">🎓 Academic</span>
-            <span class="ach-year">2024</span>
-          </div>
-          <h3 class="ach-title">Finalist — ChemUN (Model United Nations)</h3>
-          <p class="ach-inst">🏛️ AIChE India SRC 2024, NIT Rourkela</p>
-          <p class="ach-desc">Reached the finals of ChemUN at the AIChE India Student Regional Conference.</p>
-        </div>
+      <div class="contact-grid">
+        <a class="contact-card anim-target fade-up" href="mailto:bhursetejas2@gmail.com"><span class="contact-icon">📧</span><h3 class="contact-label">Email</h3><p class="contact-value">bhursetejas2@gmail.com</p></a>
+        <a class="contact-card anim-target fade-up" href="tel:+919699467833"><span class="contact-icon">📱</span><h3 class="contact-label">Phone</h3><p class="contact-value">+91‑9699467833</p></a>
+        <div class="contact-card anim-target fade-up"><span class="contact-icon">📍</span><h3 class="contact-label">Location</h3><p class="contact-value">Bhubaneswar, Odisha, India</p></div>
+        <a class="contact-card anim-target fade-up" href="https://linkedin.com/in/tejas-bhurse-72b752296" target="_blank" rel="noopener"><span class="contact-icon">💼</span><h3 class="contact-label">LinkedIn</h3><p class="contact-value">linkedin.com/in/tejas‑bhurse</p></a>
+        <a class="contact-card anim-target fade-up" href="https://github.com/Tejas250205" target="_blank" rel="noopener"><span class="contact-icon">🐙</span><h3 class="contact-label">GitHub</h3><p class="contact-value">github.com/Tejas250205</p></a>
+        <a class="contact-card anim-target fade-up" href="https://orcid.org/0009-0007-1083-1771" target="_blank" rel="noopener"><span class="contact-icon">🆔</span><h3 class="contact-label">ORCID</h3><p class="contact-value">0009‑0007‑1083‑1771</p></a>
+        <a class="contact-card anim-target fade-up" href="https://scholar.google.com/citations?user=EQRxjKsAAAAJ&hl=en" target="_blank" rel="noopener"><span class="contact-icon">📝</span><h3 class="contact-label">Google Scholar</h3><p class="contact-value">Scholar</p></a>
+        <a class="contact-card anim-target fade-up" href="https://www.researchgate.net/profile/Tejas-Bhurse" target="_blank" rel="noopener"><span class="contact-icon">🔬</span><h3 class="contact-label">ResearchGate</h3><p class="contact-value">ResearchGate</p></a>
       </div>
     </div>
+  </section>
+
+  <!-- ===== Lightbox ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-x" id="lightbox-x" aria-label="Close">✕</button>
+    <img src="" alt="" id="lightbox-img">
   </div>
-</section>
 
-<!-- SECTION 10 -->
-<section id="leadership" class="section">
-  <div class="section-inner">
-    <div class="section-head">
-      <div class="section-chip"><span class="chip-dot"></span>Leadership</div>
-      <h2 class="section-title">Leadership &amp; Extracurricular</h2>
-      <p class="section-subtitle">Taking initiative and building community impact</p>
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">TB</span>
+      <p>&copy; 2026 Tejas Bhurse. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Tejas250205" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/tejas-bhurse-72b752296" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://orcid.org/0009-0007-1083-1771" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://scholar.google.com/citations?user=EQRxjKsAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+      </div>
     </div>
-    <div class="leadership-grid">
-      <div class="lead-card anim-target fade-up"><span class="lead-icon">🏎️</span><h3 class="lead-role">Chem-E-Car Coordinator</h3><p class="lead-org">AIChE ICT-IOCB Student Chapter</p><span class="lead-dur">2025–26</span></div>
-      <div class="lead-card anim-target fade-up"><span class="lead-icon">🔬</span><h3 class="lead-role">Research Lead Team Aluminator</h3><p class="lead-org">AIChE ICT-IOCB Student Chapter</p><span class="lead-dur">2024–25</span></div>
-      <div class="lead-card anim-target fade-up"><span class="lead-icon">👨‍🏫</span><h3 class="lead-role">K-12 STEM Outreach Coordinator</h3><p class="lead-org">AIChE ICT-IOCB Student Chapter</p><span class="lead-dur">2024–25</span></div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- SECTION 11 -->
-<section id="contact" class="section">
-  <div class="section-inner">
-    <div class="section-head">
-      <div class="section-chip"><span class="chip-dot"></span>Contact</div>
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="section-subtitle">Reach out for collaborations, research opportunities, or just to connect</p>
-    </div>
-    <div class="contact-grid">
-      <a class="contact-card anim-target fade-up" href="mailto:bhursetejas2@gmail.com"><span class="contact-icon">📧</span><h3 class="contact-label">Email</h3><p class="contact-value">bhursetejas2@gmail.com</p></a>
-      <a class="contact-card anim-target fade-up" href="tel:+919699467833"><span class="contact-icon">📱</span><h3 class="contact-label">Phone</h3><p class="contact-value">+91-9699467833</p></a>
-      <div class="contact-card anim-target fade-up"><span class="contact-icon">📍</span><h3 class="contact-label">Location</h3><p class="contact-value">Bhubaneswar, Odisha, India</p></div>
-      <a class="contact-card anim-target fade-up" href="https://linkedin.com/in/tejasbhurse" target="_blank" rel="noopener"><span class="contact-icon">💼</span><h3 class="contact-label">LinkedIn</h3><p class="contact-value">linkedin.com/in/tejasbhurse</p></a>
-      <a class="contact-card anim-target fade-up" href="https://github.com/Tejas250205" target="_blank" rel="noopener"><span class="contact-icon">🐙</span><h3 class="contact-label">GitHub</h3><p class="contact-value">github.com/Tejas250205</p></a>
-      <a class="contact-card anim-target fade-up" href="https://orcid.org/0009-0007-1083-1771" target="_blank" rel="noopener"><span class="contact-icon">🆔</span><h3 class="contact-label">ORCID</h3><p class="contact-value">0009-0007-1083-1771</p></a>
-    </div>
-  </div>
-</section>
+  <script>
+    (function () {
+      'use strict';
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <button class="lightbox-x" id="lightbox-x" aria-label="Close">✕</button>
-  <img src="" alt="" id="lightbox-img">
-</div>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span class="footer-logo">TB</span>
-    <p>&copy; 2026 Tejas Bhurse. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="https://github.com/Tejas250205" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/tejasbhurse" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://orcid.org/0009-0007-1083-1771" target="_blank" rel="noopener">ORCID</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-(function () {
-  'use strict';
-
-  /* ========== 1. TYPEWRITER ========== */
-  const twEl = document.getElementById('typewriter');
-  if (twEl) {
-    const twText = 'Tejas Ganpat Bhurse';
-    let twIdx = 0;
-    (function typeChar() {
-      if (twIdx < twText.length) {
-        twEl.textContent += twText.charAt(twIdx);
-        twIdx++;
-        setTimeout(typeChar, 80);
+      // Typewriter
+      const twEl = document.getElementById('typewriter');
+      if (twEl) {
+        const twText = 'Tejas Ganpat Bhurse';
+        let twIdx = 0;
+        (function typeChar() {
+          if (twIdx < twText.length) {
+            twEl.textContent += twText.charAt(twIdx);
+            twIdx++;
+            setTimeout(typeChar, 80);
+          }
+        })();
       }
-    })();
-  }
 
-  /* ========== 2. NAVBAR ========== */
-  const navbar = document.getElementById('navbar');
-  const navLinks = document.getElementById('nav-links');
-  const navToggle = document.getElementById('nav-toggle');
-  const allNavLinks = document.querySelectorAll('.nav-link');
+      // Navbar
+      const navbar = document.getElementById('navbar');
+      const navLinks = document.getElementById('nav-links');
+      const navToggle = document.getElementById('nav-toggle');
+      const allNavLinks = document.querySelectorAll('.nav-link');
 
-  // Scroll class
-  window.addEventListener('scroll', function () {
-    if (navbar) {
-      if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    }
-  });
+      window.addEventListener('scroll', function () {
+        if (navbar) {
+          if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        }
+      });
 
-  // Active link tracking
-  const sections = document.querySelectorAll('.section');
-  if (sections.length) {
-    const navObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          allNavLinks.forEach(function (link) {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + id) {
-              link.classList.add('active');
+      const sections = document.querySelectorAll('.section');
+      if (sections.length) {
+        const navObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              allNavLinks.forEach(function (link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                  link.classList.add('active');
+                }
+              });
             }
           });
-        }
-      });
-    }, { threshold: 0.3 });
-    sections.forEach(function (sec) { navObserver.observe(sec); });
-  }
-
-  // Mobile toggle
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-    });
-    allNavLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-      });
-    });
-  }
-
-  /* ========== 3. SMOOTH SCROLL ========== */
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        const top = targetEl.getBoundingClientRect().top + window.pageYOffset - 70;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+        }, { threshold: 0.3 });
+        sections.forEach(function (sec) { navObserver.observe(sec); });
       }
-    });
-  });
 
-  /* ========== 4. SCROLL ANIMATIONS ========== */
-  const animTargets = document.querySelectorAll('.anim-target');
-  if (animTargets.length) {
-    const animObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const delay = el.getAttribute('data-delay');
-          if (delay) {
-            setTimeout(function () { el.classList.add('visible'); }, parseInt(delay, 10));
-          } else {
-            el.classList.add('visible');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('open');
+        });
+        allNavLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('open');
+          });
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            const top = targetEl.getBoundingClientRect().top + window.pageYOffset - 70;
+            window.scrollTo({ top: top, behavior: 'smooth' });
           }
-          observer.unobserve(el);
-        }
+        });
       });
-    }, { threshold: 0.1, rootMargin: '-40px' });
 
-    // Stagger children within the same parent that share the same animation class
-    const staggerParents = new Set();
-    animTargets.forEach(function (el) { staggerParents.add(el.parentElement); });
-    staggerParents.forEach(function (parent) {
-      const children = parent.querySelectorAll(':scope > .anim-target');
-      if (children.length > 1) {
-        children.forEach(function (child, i) {
-          if (!child.getAttribute('data-delay')) {
-            child.setAttribute('data-delay', String(i * 100));
+      // Scroll animations
+      const animTargets = document.querySelectorAll('.anim-target');
+      if (animTargets.length) {
+        const animObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const delay = el.getAttribute('data-delay');
+              if (delay) {
+                setTimeout(function () { el.classList.add('visible'); }, parseInt(delay, 10));
+              } else {
+                el.classList.add('visible');
+              }
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '-40px' });
+
+        const staggerParents = new Set();
+        animTargets.forEach(function (el) { staggerParents.add(el.parentElement); });
+        staggerParents.forEach(function (parent) {
+          const children = parent.querySelectorAll(':scope > .anim-target');
+          if (children.length > 1) {
+            children.forEach(function (child, i) {
+              if (!child.getAttribute('data-delay')) {
+                child.setAttribute('data-delay', String(i * 100));
+              }
+            });
+          }
+        });
+
+        animTargets.forEach(function (el) { animObserver.observe(el); });
+      }
+
+      // CGPA counter
+      const cgpaEl = document.querySelector('.cgpa-number');
+      if (cgpaEl) {
+        const cgpaObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              const target = parseFloat(entry.target.getAttribute('data-target'));
+              const duration = 2000;
+              const start = performance.now();
+              function animateCGPA(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                entry.target.textContent = (target * eased).toFixed(2);
+                if (progress < 1) {
+                  requestAnimationFrame(animateCGPA);
+                } else {
+                  entry.target.textContent = target.toFixed(2);
+                }
+              }
+              requestAnimationFrame(animateCGPA);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        cgpaObserver.observe(cgpaEl);
+      }
+
+      // Skills progress
+      const skillCards = document.querySelectorAll('.skill-card');
+      if (skillCards.length) {
+        const skillObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              const card = entry.target;
+              const fill = card.querySelector('.progress-fill');
+              const pct = card.querySelector('.skill-pct');
+              if (fill) {
+                const width = fill.getAttribute('data-width');
+                fill.style.width = width + '%';
+              }
+              if (pct) {
+                const target = parseInt(pct.getAttribute('data-target'), 10);
+                const duration = 1500;
+                const start = performance.now();
+                function animateSkill(now) {
+                  const elapsed = now - start;
+                  const progress = Math.min(elapsed / duration, 1);
+                  const eased = 1 - Math.pow(1 - progress, 3);
+                  pct.textContent = Math.round(target * eased) + '%';
+                  if (progress < 1) {
+                    requestAnimationFrame(animateSkill);
+                  } else {
+                    pct.textContent = target + '%';
+                  }
+                }
+                requestAnimationFrame(animateSkill);
+              }
+              observer.unobserve(card);
+            }
+          });
+        }, { threshold: 0.1 });
+        skillCards.forEach(function (card) { skillObserver.observe(card); });
+      }
+
+      // Achievement stats
+      const achStatsRow = document.getElementById('ach-stats-row');
+      if (achStatsRow) {
+        const achObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              const nums = entry.target.querySelectorAll('.ach-stat-num');
+              nums.forEach(function (num) {
+                const target = parseInt(num.getAttribute('data-target'), 10);
+                const duration = 1500;
+                const start = performance.now();
+                function animateStat(now) {
+                  const elapsed = now - start;
+                  const progress = Math.min(elapsed / duration, 1);
+                  const eased = 1 - Math.pow(1 - progress, 3);
+                  num.textContent = Math.round(target * eased);
+                  if (progress < 1) {
+                    requestAnimationFrame(animateStat);
+                  } else {
+                    num.textContent = target;
+                  }
+                }
+                requestAnimationFrame(animateStat);
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        achObserver.observe(achStatsRow);
+      }
+
+      // Achievement filter
+      const filterPills = document.querySelectorAll('.ach-filter-pill');
+      const achCards = document.querySelectorAll('.ach-card');
+      filterPills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          filterPills.forEach(function (p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          const filter = pill.getAttribute('data-filter');
+          achCards.forEach(function (card) {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.classList.remove('hidden-filter');
+              card.classList.remove('visible');
+              requestAnimationFrame(function () {
+                card.classList.add('visible');
+              });
+            } else {
+              card.classList.add('hidden-filter');
+            }
+          });
+        });
+      });
+
+      // Lightbox
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxX = document.getElementById('lightbox-x');
+
+      document.querySelectorAll('.ach-img').forEach(function (img) {
+        img.addEventListener('click', function () {
+          if (lightbox && lightboxImg) {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      function closeLightbox() {
+        if (lightbox) {
+          lightbox.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (lightboxX) {
+        lightboxX.addEventListener('click', closeLightbox);
+      }
+      if (lightbox) {
+        lightbox.addEventListener('click', function (e) {
+          if (e.target !== lightboxImg) {
+            closeLightbox();
           }
         });
       }
-    });
-
-    animTargets.forEach(function (el) { animObserver.observe(el); });
-  }
-
-  /* ========== 5. CGPA COUNTER ========== */
-  const cgpaEl = document.querySelector('.cgpa-number');
-  if (cgpaEl) {
-    const cgpaObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          const target = parseFloat(entry.target.getAttribute('data-target'));
-          const duration = 2000;
-          const start = performance.now();
-          function animateCGPA(now) {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            entry.target.textContent = (target * eased).toFixed(2);
-            if (progress < 1) {
-              requestAnimationFrame(animateCGPA);
-            } else {
-              entry.target.textContent = target.toFixed(2);
-            }
-          }
-          requestAnimationFrame(animateCGPA);
-          observer.unobserve(entry.target);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
         }
       });
-    }, { threshold: 0.1 });
-    cgpaObserver.observe(cgpaEl);
-  }
 
-  /* ========== 6. SKILLS PROGRESS ========== */
-  const skillCards = document.querySelectorAll('.skill-card');
-  if (skillCards.length) {
-    const skillObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          const card = entry.target;
-          const fill = card.querySelector('.progress-fill');
-          const pct = card.querySelector('.skill-pct');
-          if (fill) {
-            const width = fill.getAttribute('data-width');
-            fill.style.width = width + '%';
-          }
-          if (pct) {
-            const target = parseInt(pct.getAttribute('data-target'), 10);
-            const duration = 1500;
-            const start = performance.now();
-            function animateSkill(now) {
-              const elapsed = now - start;
-              const progress = Math.min(elapsed / duration, 1);
-              const eased = 1 - Math.pow(1 - progress, 3);
-              pct.textContent = Math.round(target * eased) + '%';
-              if (progress < 1) {
-                requestAnimationFrame(animateSkill);
-              } else {
-                pct.textContent = target + '%';
-              }
-            }
-            requestAnimationFrame(animateSkill);
-          }
-          observer.unobserve(card);
-        }
+      // Cert tilt
+      document.querySelectorAll('.cert-card').forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          const rect = card.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = e.clientX - cx;
+          const dy = e.clientY - cy;
+          const maxDeg = 5;
+          const rotateX = -(dy / (rect.height / 2)) * maxDeg;
+          const rotateY = (dx / (rect.width / 2)) * maxDeg;
+          card.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+        });
+        card.addEventListener('mouseleave', function () {
+          card.style.transition = 'transform 0.4s ease';
+          card.style.transform = 'none';
+          setTimeout(function () { card.style.transition = ''; }, 400);
+        });
       });
-    }, { threshold: 0.1 });
-    skillCards.forEach(function (card) { skillObserver.observe(card); });
-  }
 
-  /* ========== 7. ACHIEVEMENT STATS ========== */
-  const achStatsRow = document.getElementById('ach-stats-row');
-  if (achStatsRow) {
-    const achObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          const nums = entry.target.querySelectorAll('.ach-stat-num');
-          nums.forEach(function (num) {
-            const target = parseInt(num.getAttribute('data-target'), 10);
-            const duration = 1500;
-            const start = performance.now();
-            function animateStat(now) {
-              const elapsed = now - start;
-              const progress = Math.min(elapsed / duration, 1);
-              const eased = 1 - Math.pow(1 - progress, 3);
-              num.textContent = Math.round(target * eased);
-              if (progress < 1) {
-                requestAnimationFrame(animateStat);
-              } else {
-                num.textContent = target;
-              }
-            }
-            requestAnimationFrame(animateStat);
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    achObserver.observe(achStatsRow);
-  }
+    })();
+  </script>
 
-  /* ========== 8. ACHIEVEMENT FILTER ========== */
-  const filterPills = document.querySelectorAll('.ach-filter-pill');
-  const achCards = document.querySelectorAll('.ach-card');
-  filterPills.forEach(function (pill) {
-    pill.addEventListener('click', function () {
-      filterPills.forEach(function (p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      const filter = pill.getAttribute('data-filter');
-      achCards.forEach(function (card) {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.classList.remove('hidden-filter');
-          card.classList.remove('visible');
-          requestAnimationFrame(function () {
-            card.classList.add('visible');
-          });
-        } else {
-          card.classList.add('hidden-filter');
-        }
-      });
-    });
-  });
-
-  /* ========== 9. LIGHTBOX ========== */
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxX = document.getElementById('lightbox-x');
-
-  document.querySelectorAll('.ach-img').forEach(function (img) {
-    img.addEventListener('click', function () {
-      if (lightbox && lightboxImg) {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
-
-  function closeLightbox() {
-    if (lightbox) {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  }
-
-  if (lightboxX) {
-    lightboxX.addEventListener('click', closeLightbox);
-  }
-  if (lightbox) {
-    lightbox.addEventListener('click', function (e) {
-      if (e.target !== lightboxImg) {
-        closeLightbox();
-      }
-    });
-  }
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeLightbox();
-    }
-  });
-
-  /* ========== 10. CERT TILT ========== */
-  document.querySelectorAll('.cert-card').forEach(function (card) {
-    card.addEventListener('mousemove', function (e) {
-      const rect = card.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = e.clientX - cx;
-      const dy = e.clientY - cy;
-      const maxDeg = 5;
-      const rotateX = -(dy / (rect.height / 2)) * maxDeg;
-      const rotateY = (dx / (rect.width / 2)) * maxDeg;
-      card.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
-    });
-    card.addEventListener('mouseleave', function () {
-      card.style.transition = 'transform 0.4s ease';
-      card.style.transform = 'none';
-      setTimeout(function () { card.style.transition = ''; }, 400);
-    });
-  });
-
-})();
-</script>
 </body>
 </html>
